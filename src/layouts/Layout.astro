@@ -1,0 +1,127 @@
+---
+import '../styles/global.css';
+import { siteConfig } from '../data/siteConfig';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = `${siteConfig.brand.name}. — Diseño y Desarrollo Web a Medida`,
+  description = 'Diseño y desarrollo sitios web a medida para negocios, profesionales y proyectos que necesitan una presencia digital propia. Cada proyecto es distinto, su web también.',
+  image = '/assets/brand/og-share.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://flitzfa.github.io');
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F4F5ED" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- SEO Primary -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Fabricio (flitzfa)" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Typography: Plus Jakarta Sans & Newsreader & Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#F4F5ED] text-[#182019] min-h-screen flex flex-col relative selection:bg-[#DCE7D7] selection:text-[#263B2B] antialiased">
+    <!-- Skip to content for accessibility -->
+    <a
+      href="#contenido-principal"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#263B2B] focus:text-[#F4F5ED] focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#6F8F72]"
+    >
+      Saltar al contenido principal
+    </a>
+
+    <!-- Subtle Grain Overlay (Organic Editorial Feel) -->
+    <div
+      class="pointer-events-none fixed inset-0 z-40 opacity-[0.025] mix-blend-multiply"
+      style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"
+      aria-hidden="true"
+    ></div>
+
+    <slot />
+
+    <!-- Cursor Follower (Refined, only on desktop pointer) -->
+    <div
+      id="custom-cursor"
+      class="hidden md:block pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#6F8F72]/40 transition-transform duration-75 ease-out opacity-0"
+      style="width: 28px; height: 28px;"
+      aria-hidden="true"
+    >
+      <div class="w-1.5 h-1.5 bg-[#6F8F72] rounded-full mx-auto mt-[10px]"></div>
+    </div>
+
+    <script>
+      // Sutil cursor y comportamiento interactivo respetando accesibilidad
+      const cursor = document.getElementById('custom-cursor');
+      if (cursor && window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let mouseX = -100, mouseY = -100;
+        let isVisible = false;
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+          if (!isVisible) {
+            cursor.classList.remove('opacity-0');
+            cursor.classList.add('opacity-100');
+            isVisible = true;
+          }
+        });
+
+        window.addEventListener('mouseleave', () => {
+          cursor.classList.remove('opacity-100');
+          cursor.classList.add('opacity-0');
+          isVisible = false;
+        });
+
+        // Hover effect on links and project cards
+        const interactiveElements = document.querySelectorAll('a, button, [data-interactive]');
+        interactiveElements.forEach((el) => {
+          el.addEventListener('mouseenter', () => {
+            cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(1.6)`;
+            cursor.style.borderColor = 'rgba(111, 143, 114, 0.8)';
+            cursor.style.backgroundColor = 'rgba(220, 231, 215, 0.25)';
+          });
+          el.addEventListener('mouseleave', () => {
+            cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(1)`;
+            cursor.style.borderColor = 'rgba(111, 143, 114, 0.4)';
+            cursor.style.backgroundColor = 'transparent';
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

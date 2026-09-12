@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ProjectsSection from '../components/ProjectsSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import MethodologySection from '../components/MethodologySection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main id="contenido-principal">
+    <Hero />
+    <ProjectsSection />
+    <ServicesSection />
+    <MethodologySection />
+    <AboutSection />
+    <ContactSection />
+  </main>
+  <Footer />
+</Layout>

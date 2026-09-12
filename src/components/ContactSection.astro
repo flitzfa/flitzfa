@@ -1,0 +1,103 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<section id="contacto" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative bg-[#FAFBF7] border-t border-[#D9DED4]" aria-labelledby="contact-heading">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+    
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      
+      <!-- Eyebrow -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#DCE7D7]/50 border border-[#A8BFA3]/40 text-xs font-mono text-[#263B2B]">
+        <span class="w-2 h-2 rounded-full bg-[#6F8F72] animate-pulse"></span>
+        <span>05 — INICIAR CONVERSACIÓN</span>
+      </div>
+
+      <!-- Headline -->
+      <h2
+        id="contact-heading"
+        class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#182019] tracking-tight leading-[1.08]"
+      >
+        ¿Tenés una idea?<br />
+        <span class="font-serif italic font-normal text-[#263B2B]">
+          Hablemos<span class="text-[#6F8F72] not-italic">.</span>
+        </span>
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-xl text-[#697069] max-w-2xl mx-auto font-normal leading-relaxed">
+        Contame qué tenés en mente y vemos juntos cómo llevarlo a la web. Sin compromisos, para entender si soy la persona adecuada para tu proyecto.
+      </p>
+
+      <!-- Primary Channels Grid -->
+      <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto text-left">
+        
+        <!-- WhatsApp Direct Card -->
+        <a
+          href={siteConfig.contact.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group p-6 rounded-2xl bg-[#F4F5ED] border border-[#D9DED4] hover:border-[#6F8F72] hover:bg-[#DCE7D7]/30 transition-all block"
+          data-interactive
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-[#6F8F72] font-semibold">Respuesta Rápida</span>
+            <span class="w-7 h-7 rounded-full bg-[#FAFBF7] border border-[#D9DED4] flex items-center justify-center text-xs text-[#182019] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+              ↗
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-[#182019]">Escribime por WhatsApp</h3>
+          <p class="text-xs text-[#697069] mt-1">Para consultas directas, disponibilidad o conversar sobre una idea.</p>
+          <div class="mt-4 text-xs font-mono text-[#263B2B] font-semibold flex items-center gap-1.5">
+            <span>Iniciar chat</span>
+            <span>→</span>
+          </div>
+        </a>
+
+        <!-- Email Direct Card -->
+        <a
+          href={`mailto:${siteConfig.contact.email}`}
+          class="group p-6 rounded-2xl bg-[#F4F5ED] border border-[#D9DED4] hover:border-[#6F8F72] hover:bg-[#DCE7D7]/30 transition-all block"
+          data-interactive
+        >
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-[#697069] font-semibold">Correo Electrónico</span>
+            <span class="w-7 h-7 rounded-full bg-[#FAFBF7] border border-[#D9DED4] flex items-center justify-center text-xs text-[#182019] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+              ↗
+            </span>
+          </div>
+          <h3 class="text-lg font-bold text-[#182019]">Enviar un email</h3>
+          <p class="text-xs text-[#697069] mt-1">Para briefs detallados, presupuestos o especificaciones de proyecto.</p>
+          <div class="mt-4 text-xs font-mono text-[#263B2B] font-semibold flex items-center gap-1.5 truncate">
+            <span>{siteConfig.contact.email}</span>
+            <span>→</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Secondary Links (Instagram, GitHub) -->
+      <div class="pt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-[#697069]">
+        <span class="text-xs font-mono uppercase tracking-wider">También podés encontrarme en:</span>
+        <a
+          href={siteConfig.contact.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[#182019] underline font-medium"
+        >
+          Instagram ↗
+        </a>
+        <a
+          href={siteConfig.contact.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hover:text-[#182019] underline font-medium"
+        >
+          GitHub ↗
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>

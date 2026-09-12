@@ -1,0 +1,88 @@
+---
+import { siteConfig } from '../data/siteConfig';
+---
+
+<section
+  id="inicio"
+  class="relative flex flex-col justify-between pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full overflow-hidden"
+  aria-labelledby="hero-title"
+>
+  <!-- Background Ambient Subtle Glow (Organic Sage) -->
+  <div
+    class="pointer-events-none absolute -top-24 right-1/4 w-96 h-96 rounded-full bg-[#DCE7D7]/35 blur-3xl -z-10"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="pointer-events-none absolute top-1/2 -left-20 w-80 h-80 rounded-full bg-[#FAFBF7]/60 blur-2xl -z-10"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Top Metadata & Availability Indicator -->
+  <div class="flex flex-wrap items-center justify-between gap-4 pb-6 sm:pb-8 border-b border-[#D9DED4]/50">
+    <div class="inline-flex items-center gap-2.5 text-xs font-mono uppercase tracking-wider text-[#697069]">
+      <span class="relative flex h-2 w-2">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6F8F72] opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#6F8F72]"></span>
+      </span>
+      <span>{siteConfig.author.availabilityText}</span>
+    </div>
+
+    <div class="text-xs font-mono text-[#697069] hidden sm:block">
+      <span>Diseño &amp; Frontend independiente</span>
+      <span class="mx-2 text-[#D9DED4]">/</span>
+      <span>Buenos Aires</span>
+    </div>
+  </div>
+
+  <!-- Central Editorial Headline & Copy -->
+  <div class="py-10 sm:py-14 lg:py-16 max-w-5xl">
+    <h1
+      id="hero-title"
+      class="text-4xl sm:text-6xl md:text-7xl lg:text-[82px] font-extrabold tracking-[-0.035em] text-[#182019] leading-[1.08]"
+    >
+      Webs hechas para tu proyecto,
+      <span class="block font-normal italic font-serif text-[#263B2B] mt-1 sm:mt-2">
+        no para una plantilla<span class="text-[#6F8F72] not-italic">.</span>
+      </span>
+    </h1>
+
+    <p class="mt-8 text-lg sm:text-xl md:text-2xl text-[#697069] max-w-2xl font-normal leading-relaxed">
+      Diseño y desarrollo sitios web a medida para negocios, profesionales y proyectos que necesitan una presencia digital propia.
+    </p>
+
+    <!-- CTAs with Refined Rhythm -->
+    <div class="mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
+      <a
+        href="#contacto"
+        class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#263B2B] text-[#F4F5ED] text-sm font-semibold tracking-wide hover:bg-[#182019] shadow-sm transition-all hover:translate-y-[-1px]"
+      >
+        <span>Hablemos de tu idea</span>
+        <span class="text-[#A8BFA3]">↗</span>
+      </a>
+
+      <a
+        href="#proyectos"
+        class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[#FAFBF7] border border-[#D9DED4] text-[#182019] text-sm font-medium hover:border-[#6F8F72] hover:bg-[#DCE7D7]/30 transition-all"
+      >
+        <span>Ver proyectos seleccionados</span>
+        <span class="text-[#6F8F72]">↓</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Bottom Editorial Trio: Core Values -->
+  <div class="pt-8 border-t border-[#D9DED4]/60 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm">
+    <div class="space-y-1">
+      <span class="text-[11px] font-mono tracking-widest text-[#6F8F72] uppercase block">01 / A Medida</span>
+      <p class="text-xs sm:text-sm text-[#182019] font-medium">Cada sitio pensado específicamente para el proyecto que representa.</p>
+    </div>
+    <div class="space-y-1">
+      <span class="text-[11px] font-mono tracking-widest text-[#6F8F72] uppercase block">02 / Identidad Propia</span>
+      <p class="text-xs sm:text-sm text-[#182019] font-medium">Los colores y el lenguaje visual nacen del cliente, no de una tendencia genérica.</p>
+    </div>
+    <div class="space-y-1">
+      <span class="text-[11px] font-mono tracking-widest text-[#6F8F72] uppercase block">03 / Trato Directo</span>
+      <p class="text-xs sm:text-sm text-[#182019] font-medium">Conversación cercana y sin intermediarios de la idea al lanzamiento.</p>
+    </div>
+  </div>
+</section>

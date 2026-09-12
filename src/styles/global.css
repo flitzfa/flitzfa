@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #F4F5ED;
+  --color-surface: #FAFBF7;
+  --color-primary: #6F8F72;
+  --color-primary-hover: #5A775D;
+  --color-secondary: #A8BFA3;
+  --color-soft: #DCE7D7;
+  --color-dark: #263B2B;
+  --color-text-main: #182019;
+  --color-text-muted: #697069;
+  --color-border: #D9DED4;
+}
+
+/* Custom properties for Tailwind 4 */
+@theme {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-soft: var(--color-soft);
+  --color-dark: var(--color-dark);
+  --color-text-main: var(--color-text-main);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
+  
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-editorial: 'Newsreader', Georgia, serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-soft);
+  color: var(--color-dark);
+}
+
+/* Accessible focus states */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* Smooth transitions for links & buttons */
+a, button {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Refined custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

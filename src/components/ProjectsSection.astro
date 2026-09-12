@@ -1,0 +1,55 @@
+---
+import { projectsData } from '../data/projects';
+import ProjectShowcaseItem from './ProjectShowcaseItem.astro';
+---
+
+<section id="proyectos" class="scroll-mt-20 sm:scroll-mt-24 pt-16 pb-12 sm:pt-24 sm:pb-20 relative" aria-labelledby="projects-heading">
+  <!-- Section Editorial Header -->
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-12 sm:mb-16">
+    <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+      
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#6F8F72] uppercase font-semibold mb-3">
+          <span>01 — TRABAJOS DESTACADOS</span>
+        </div>
+        <h2
+          id="projects-heading"
+          class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.12]"
+        >
+          Algunos proyectos<br />
+          <span class="font-serif italic font-normal text-[#263B2B]">
+            que pasaron por mis manos<span class="text-[#6F8F72] not-italic">.</span>
+          </span>
+        </h2>
+      </div>
+
+      <div class="lg:col-span-5 text-[#697069] text-sm sm:text-base leading-relaxed">
+        <p>
+          Cada cliente llega con un universo propio: un parador que vive del río y los atardeceres, una banda instrumental de jazz en gira, un gimnasio que respira disciplina o un centro médico animal. Mi trabajo es encontrar la voz visual de cada uno y construir una web auténtica.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Showcase Items List (Large Editorial Presentation) -->
+  <div class="projects-list">
+    {projectsData.map((project) => (
+      <ProjectShowcaseItem project={project} />
+    ))}
+  </div>
+
+  <!-- Bottom Transition Note -->
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-16">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 sm:p-5 rounded-2xl bg-[#FAFBF7] border border-[#D9DED4] text-xs sm:text-sm text-[#697069]">
+      <div class="flex items-center gap-2.5">
+        <span class="w-2 h-2 rounded-full bg-[#6F8F72] shrink-0"></span>
+        <span>¿Tenés un rubro o idea diferente? Desarrollamos el concepto desde cero para tu proyecto.</span>
+      </div>
+      <a href="#contacto" class="inline-flex items-center gap-1 font-semibold text-[#182019] hover:text-[#6F8F72] shrink-0 underline self-start sm:self-auto">
+        <span>Consultar</span>
+        <span>↗</span>
+      </a>
+    </div>
+  </div>
+</section>
