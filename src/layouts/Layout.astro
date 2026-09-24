@@ -6,15 +6,26 @@ interface Props {
   title?: string;
   description?: string;
   image?: string;
+  imageAlt?: string;
 }
 
 const {
-  title = `${siteConfig.brand.name}. — Diseño y Desarrollo Web a Medida`,
-  description = 'Diseño y desarrollo sitios web a medida para negocios, profesionales y proyectos que necesitan una presencia digital propia. Cada proyecto es distinto, su web también.',
-  image = '/assets/brand/og-share.png',
+  title = siteConfig.seo.title,
+  description = siteConfig.seo.description,
+  image = siteConfig.seo.image,
+  imageAlt = siteConfig.seo.imageAlt,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://flitzfa.github.io');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site);
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteConfig.author.name,
+  alternateName: siteConfig.author.nickname,
+  url: canonicalURL.href,
+  sameAs: [siteConfig.contact.instagram, siteConfig.contact.github],
+};
 ---
 
 <!doctype html>
@@ -37,15 +48,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://flitzfa.
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="flitzfa." />
     <meta property="og:locale" content="es_AR" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Typography: Plus Jakarta Sans & Newsreader & Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

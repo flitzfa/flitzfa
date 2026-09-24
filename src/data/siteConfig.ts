@@ -25,6 +25,12 @@ export interface SiteConfig {
     github: string;
     location: string;
   };
+  seo: {
+    title: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+  };
   nav: NavItem[];
 }
 
@@ -47,13 +53,18 @@ export const siteConfig: SiteConfig = {
     availabilityText: 'Disponible para nuevos proyectos',
   },
   contact: {
-    // Placeholders configurables para el usuario
-    email: 'fabrix.enriquez@gmial.com', // TODO: Reemplazar por tu correo real
-    whatsapp: 'https://wa.me/5491123191413', // TODO: Reemplazar por tu número de WhatsApp
-    whatsappFormatted: '+54 9 11 1123-191413',
-    instagram: 'https://instagram.com/flitzfa', // TODO: Reemplazar por tu usuario de Instagram
+    email: 'fabrix.enriquez@gmail.com',
+    whatsapp: 'https://wa.me/5491123191413',
+    whatsappFormatted: '+54 9 11 2319-1413',
+    instagram: 'https://www.instagram.com/flitzfa/',
     github: 'https://github.com/flitzfa',
     location: 'Buenos Aires, Argentina',
+  },
+  seo: {
+    title: 'flitzfa. — Diseño y Desarrollo Web a Medida',
+    description: 'Diseño y desarrollo sitios web a medida para negocios, profesionales y proyectos que necesitan una presencia digital propia. Cada proyecto es distinto, su web también.',
+    image: '/assets/brand/og-share.png',
+    imageAlt: 'flitzfa. — Diseño y desarrollo web a medida',
   },
   nav: [
     { label: 'Proyectos', href: '#proyectos' },

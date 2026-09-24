@@ -53,9 +53,9 @@ const isReversed = project.layoutReversed;
         </p>
 
         <!-- Action Link -->
-        <div class="mt-8 pt-2">
+        {project.liveUrl && <div class="mt-8 pt-2">
           <a
-            href={project.liveUrl || '#'}
+            href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="group/link inline-flex items-center gap-3 text-base font-semibold text-[#182019] hover:text-[#263B2B] transition-all"
@@ -69,7 +69,7 @@ const isReversed = project.layoutReversed;
               <span class="text-xs font-bold text-[#182019]">↗</span>
             </span>
           </a>
-        </div>
+        </div>}
       </div>
 
       <!-- High-Scale Editorial Showcase Column -->
@@ -94,7 +94,7 @@ const isReversed = project.layoutReversed;
                   Rincón Santa María · Ituzaingó
                 </span>
                 <span class="text-[11px] font-mono text-[#2A7B9B]/70 uppercase shrink-0 hidden sm:inline">
-                  mariabeach.com.ar ↗
+                  parador-mariabeach.vercel.app ↗
                 </span>
               </div>
 
@@ -140,7 +140,7 @@ const isReversed = project.layoutReversed;
               <!-- Band Image spanning full container -->
               <img
                 src="/assets/projects/620-band.jpg"
-                alt="620 Trío en vivo en Estudios ION"
+                alt="Integrantes de 620 Trío en Estudios ION"
                 class="absolute inset-0 w-full h-full object-cover object-center opacity-85 transition-transform duration-700 ease-out group-hover/showcase:scale-105"
                 loading="lazy"
               />
@@ -161,10 +161,10 @@ const isReversed = project.layoutReversed;
                     Una ruta hecha<br />de canciones.
                   </h4>
                   <p class="text-sm text-[#D4CFC7] font-light">
-                    Fusión · Folclore · Jazz contemporáneo · Álbum “Transporte Ideal”
+                    Fusión · Folclore · Jazz contemporáneo · Tema “Transporte Ideal”
                   </p>
                   <div class="pt-2 text-xs font-mono text-[#FFC88A]">
-                    Próxima fecha: Tanque Cultural · Liniers
+                    Folclore argentino · Rock · Jazz
                   </div>
                 </div>
               </div>
@@ -186,7 +186,7 @@ const isReversed = project.layoutReversed;
                   San Justo · Buenos Aires
                 </span>
                 <span class="text-xs font-mono text-white/50 uppercase hidden sm:inline">
-                  kitafitness.com ↗
+                  flitzfa.github.io/kita-fit ↗
                 </span>
               </div>
 
@@ -219,7 +219,7 @@ const isReversed = project.layoutReversed;
 
               <!-- Bottom schedule line -->
               <div class="flex items-center justify-between pt-4 border-t border-white/10 z-10 text-xs font-mono text-white/60">
-                <span>Lunes a Sábado 07:00 – 22:00</span>
+                <span>Lun–Vie 07:00–22:00 · Sáb 09:00–18:00</span>
                 <span class="text-[#C7FF24] font-semibold">Inscripciones abiertas</span>
               </div>
             </div>
@@ -231,7 +231,7 @@ const isReversed = project.layoutReversed;
               <!-- Header -->
               <div class="flex items-center justify-between gap-2 z-10">
                 <span class="px-3 py-1 rounded-full bg-[#0E7C7B]/15 text-[#0E7C7B] text-xs font-mono font-semibold truncate">
-                  18 Especialidades Médicas &amp; Guardia
+                  18 Especialidades Médicas
                 </span>
                 <span class="text-xs font-mono text-[#0E7C7B]/70 shrink-0 hidden sm:inline">
                   Isidro Casanova, Bs As
@@ -242,7 +242,7 @@ const isReversed = project.layoutReversed;
               <div class="my-auto py-6 grid grid-cols-1 sm:grid-cols-12 gap-8 items-center z-10">
                 <div class="sm:col-span-6 space-y-4 text-left">
                   <h4 class="text-3xl sm:text-4xl font-extrabold text-[#0D3B3A] leading-tight">
-                    Medicina veterinaria de alta complejidad.
+                    Medicina veterinaria con atención integral.
                   </h4>
                   <p class="text-xs sm:text-sm text-[#3E6564] leading-relaxed">
                     Atención clínica y diagnóstica para caninos, felinos y animales no tradicionales.
@@ -267,8 +267,8 @@ const isReversed = project.layoutReversed;
 
               <!-- Bottom Action -->
               <div class="flex items-center justify-between pt-4 border-t border-[#0E7C7B]/15 z-10 text-xs font-mono text-[#0D3B3A]">
-                <span>Guardia y urgencias</span>
-                <span class="text-[#0E7C7B] font-semibold">Turnos rápidos por WhatsApp ↗</span>
+                <span>Atención clínica integral</span>
+                <span class="text-[#0E7C7B] font-semibold">Turnos por WhatsApp ↗</span>
               </div>
             </div>
           )}
