@@ -1,79 +1,59 @@
 ---
-import { siteConfig } from '../data/siteConfig';
 import { toolsAndTech } from '../data/services';
 ---
 
-<section id="sobre-mi" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="about-heading">
+<section id="sobre-mi" class="scroll-mt-20 sm:scroll-mt-24 py-24 sm:py-36 relative" aria-labelledby="about-heading">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
     <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       
-      <!-- Left Column: Title & Personal Identity Graphic -->
+      <!-- Left Column: Name & Stated Principle -->
       <div class="lg:col-span-5 space-y-6">
         <div>
-          <span class="text-xs font-mono tracking-widest text-[#6F8F72] uppercase block mb-3 font-semibold">
+          <span class="text-xs font-mono tracking-widest text-[#6F8F72] uppercase block mb-4 font-semibold">
             04 — SOBRE MÍ
           </span>
           <h2
             id="about-heading"
-            class="text-4xl sm:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.1]"
+            class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#182019] tracking-tight leading-[1.05]"
           >
             Soy Fabricio<span class="text-[#6F8F72]">.</span>
           </h2>
-          <p class="text-sm font-mono text-[#697069] mt-2">
-            flitzfa · Web Designer &amp; Developer
+          <p class="text-base font-serif italic text-[#263B2B] mt-4 max-w-sm leading-snug">
+            Diseño y desarrollo web a medida para proyectos que buscan una presencia digital propia.
           </p>
         </div>
 
-        <!-- Typographic Brand Card (Instead of generic stock photo) -->
-        <div class="p-6 sm:p-8 rounded-2xl bg-[#FAFBF7] border border-[#D9DED4] relative overflow-hidden space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono text-[#697069]">Identidad &amp; Enfoque</span>
-            <span class="w-2 h-2 rounded-full bg-[#6F8F72]"></span>
-          </div>
-
-          <p class="text-xl sm:text-2xl font-serif italic text-[#263B2B] leading-snug">
-            “Cada proyecto es distinto. Su web también debería serlo.”
-          </p>
-
-          <div class="pt-2 text-xs text-[#697069] leading-relaxed border-t border-[#D9DED4]/60">
-            Trabajo de forma independiente, en contacto directo con vos, desde la primera charla hasta la publicación final.
-          </div>
-        </div>
+        <p class="text-2xl sm:text-3xl font-serif italic text-[#182019] pt-6 border-t border-[#D9DED4]/60 leading-snug">
+          “Cada proyecto es distinto. Su web también debería serlo.”
+        </p>
       </div>
 
-      <!-- Right Column: Personal Statement & Discreet Tech Stack -->
+      <!-- Right Column: Human Direct Relationship & Approach -->
       <div class="lg:col-span-7 space-y-8">
         
-        <!-- Thoughtful Copy -->
-        <div class="space-y-5 text-base sm:text-lg text-[#182019]/90 font-normal leading-relaxed">
+        <!-- Sincere Editorial Copy (Direct human relationship) -->
+        <div class="space-y-6 text-lg sm:text-xl text-[#182019]/90 font-normal leading-relaxed">
           <p>
-            Desarrollo sitios web y me interesa especialmente el punto exacto donde el diseño visual, la tecnología y la identidad se encuentran.
+            Detrás de flitzfa no hay una agencia masiva ni intermediarios comerciales. Conversás y trabajás directamente con la persona que va a escuchar tu idea, entender lo que necesita tu negocio, diseñar la interfaz y escribir cada línea de código.
           </p>
-          <p class="text-[#697069]">
-            Trabajo cada proyecto buscando entender qué necesita realmente antes de decidir cómo debería verse o funcionar. No parto de una plantilla prediseñada para luego forzar tu contenido dentro; parto de tu idea, de tu público y de lo que hace único a tu negocio.
+          <p class="text-[#697069] text-base sm:text-lg">
+            Esa relación directa evita teléfonos descompuestos y asegura que la intención original de tu proyecto se mantenga intacta desde la primera charla hasta que el sitio esté publicado y funcionando.
           </p>
-          <p class="text-[#697069]">
-            He colaborado con paradores de playa, músicos independientes, clínicas veterinarias, gimnasios y proyectos en crecimiento. Esa diversidad es lo que más disfruto: aprender de rubros distintos y traducir su esencia en una experiencia web memorable.
+          <p class="text-[#697069] text-base sm:text-lg">
+            Trabajo con proyectos de rubros muy diversos: paradores frente al río, músicos independientes, clínicas veterinarias, gimnasios y comercios locales. Esa diversidad me enseñó que no existe una única fórmula: cada web debe reflejar la personalidad genuina de quien está detrás.
           </p>
         </div>
 
-        <!-- Discreet Technologies (No vanity percentages or floating logos) -->
+        <!-- Discreet Technologies (Clean, minimal) -->
         <div class="pt-8 border-t border-[#D9DED4]">
-          <div class="mb-4">
-            <h3 class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold">
-              Herramientas &amp; Tecnologías
-            </h3>
-            <p class="text-xs text-[#697069] mt-0.5">
-              Criterio técnico orientado a velocidad, accesibilidad y estabilidad a largo plazo.
-            </p>
-          </div>
-
+          <span class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold block mb-3">
+            Herramientas &amp; Criterio técnico
+          </span>
           <div class="flex flex-wrap gap-2">
             {toolsAndTech.map((tech) => (
-              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FAFBF7] border border-[#D9DED4] text-xs font-mono text-[#182019]">
-                <span class="w-1 h-1 rounded-full bg-[#6F8F72]"></span>
-                <span>{tech}</span>
+              <span class="inline-block px-3 py-1 rounded-md bg-[#FAFBF7] border border-[#D9DED4] text-xs font-mono text-[#182019]">
+                {tech}
               </span>
             ))}
           </div>

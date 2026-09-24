@@ -2,18 +2,18 @@
 import { servicesData } from '../data/services';
 ---
 
-<section id="servicios" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="services-heading">
+<section id="servicios" class="scroll-mt-20 sm:scroll-mt-24 py-24 sm:py-36 relative" aria-labelledby="services-heading">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
     <!-- Editorial Section Header -->
     <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 mb-16 sm:mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
       <div class="lg:col-span-7">
         <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#6F8F72] uppercase font-semibold mb-3">
-          <span>02 — SERVICIOS Y SOLUCIONES</span>
+          <span>02 — QUÉ PUEDO HACER</span>
         </div>
         <h2
           id="services-heading"
-          class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.12]"
+          class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.1]"
         >
           Una web pensada<br />
           <span class="font-serif italic font-normal text-[#263B2B]">
@@ -22,76 +22,42 @@ import { servicesData } from '../data/services';
         </h2>
       </div>
 
-      <div class="lg:col-span-5 text-[#697069] text-sm sm:text-base leading-relaxed">
+      <div class="lg:col-span-5 text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
         <p>
-          No vendo paquetes enlatados ni aplico soluciones genéricas. Cada proyecto requiere un enfoque particular: desde una página directa para captar clientes hasta una plataforma completa con catálogo o agenda.
+          No aplico soluciones estándar. Cada proyecto requiere un enfoque particular: desde una página directa para captar clientes hasta un espacio visual para un artista o un centro de atención médica.
         </p>
       </div>
     </div>
 
-    <!-- Editorial Rows Layout (No generic cards with icons) -->
+    <!-- 4 Expressive Editorial Categories -->
     <div class="divide-y divide-[#D9DED4] border-y border-[#D9DED4]">
       {servicesData.map((service) => (
         <div
-          class="group py-8 sm:py-10 transition-all duration-300 hover:bg-[#FAFBF7] px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-xl"
+          class="group py-12 sm:py-16 transition-colors duration-300 hover:bg-[#FAFBF7]/80 px-4 sm:px-8 -mx-4 sm:-mx-8 rounded-2xl"
           data-interactive
         >
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-baseline">
             
             <!-- Number & Primary Title -->
-            <div class="lg:col-span-5 flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-[#6F8F72] font-semibold">
+            <div class="lg:col-span-6 flex items-baseline gap-6 sm:gap-8">
+              <span class="font-mono text-sm sm:text-base text-[#6F8F72] font-semibold shrink-0">
                 {service.number}
               </span>
-              <div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-[#182019] group-hover:text-[#263B2B] transition-colors">
-                  {service.title}
-                </h3>
-                <span class="text-xs font-serif italic text-[#697069] block mt-1">
-                  {service.subtitle}
-                </span>
-              </div>
+              <h3 class="text-2xl sm:text-4xl font-extrabold text-[#182019] tracking-tight group-hover:text-[#263B2B] transition-colors">
+                {service.title}
+              </h3>
             </div>
 
-            <!-- Description -->
-            <div class="lg:col-span-5 pl-8 lg:pl-0">
-              <p class="text-[#697069] text-sm sm:text-base leading-relaxed">
+            <!-- Narrative Description -->
+            <div class="lg:col-span-6 pl-10 lg:pl-0">
+              <p class="text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
                 {service.description}
               </p>
-            </div>
-
-            <!-- Tags & Indicator -->
-            <div class="lg:col-span-2 pl-8 lg:pl-0 flex flex-wrap lg:flex-col lg:items-end justify-between gap-2">
-              <div class="flex flex-wrap gap-1.5 lg:justify-end">
-                {service.tags.slice(0, 2).map((tag) => (
-                  <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-[#F4F5ED] text-[#182019] border border-[#D9DED4]">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <span class="hidden lg:inline-flex text-xs font-mono text-[#6F8F72] opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:translate-x-1">
-                Consultar ↗
-              </span>
             </div>
 
           </div>
         </div>
       ))}
-    </div>
-
-    <!-- Direct Conversation Link -->
-    <div class="mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl bg-[#FAFBF7] border border-[#D9DED4]">
-      <div>
-        <p class="text-sm font-semibold text-[#182019]">¿No estás seguro de qué tipo de web necesita tu proyecto?</p>
-        <p class="text-xs text-[#697069] mt-0.5">Podemos analizar juntos tu caso y definir la estructura ideal.</p>
-      </div>
-      <a
-        href="#contacto"
-        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#263B2B] text-[#F4F5ED] text-xs font-semibold hover:bg-[#182019]"
-      >
-        <span>Contame tu idea</span>
-        <span class="text-[#A8BFA3]">↗</span>
-      </a>
     </div>
 
   </div>
