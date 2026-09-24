@@ -1,1 +1,32 @@
-node_modules
+# Dependencies
+node_modules/
+
+# Astro/Vite generated output
+dist/
+.astro/
+
+# Deployment state
+.vercel/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Operating-system and temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.temp
+*~
+
+# Local visual-review captures
+docs/screenshots/
