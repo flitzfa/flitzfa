@@ -1,5 +1,10 @@
 ---
+import { Image, Picture } from 'astro:assets';
 import type { ProjectItem } from '../data/projects';
+import mariaBeachLogo from '../assets/projects/mariabeach-logo.png';
+import band620Photo from '../assets/projects/620-band.jpg';
+import kitaTrainingPhoto from '../assets/projects/kita-socio.jpg';
+import portexPatientPhoto from '../assets/projects/vet-paciente-1.png';
 
 interface Props {
   project: ProjectItem;
@@ -118,13 +123,17 @@ const isReversed = project.layoutReversed;
 
                 <!-- Heroic Brand Logo -->
                 <div class="relative w-40 h-40 sm:w-56 sm:h-56 lg:w-60 lg:h-60 flex items-center justify-center p-5 sm:p-6 rounded-3xl bg-white/80 shadow-lg border border-[#77C8E9]/30 transition-transform duration-500 group-hover/showcase:scale-105 group-hover/showcase:rotate-1 motion-reduce:group-hover/showcase:scale-100 motion-reduce:group-hover/showcase:rotate-0">
-                  <img
-                    src="/assets/projects/mariabeach-logo.png"
+                  <Image
+                    src={mariaBeachLogo}
                     alt="Logo oficial de María Beach"
-                    width="1254"
-                    height="1254"
+                    format="png"
+                    width={360}
+                    height={360}
+                    widths={[160, 240, 360]}
+                    sizes="(min-width: 1024px) 166px, (min-width: 640px) 174px, 118px"
                     class="max-h-full max-w-full object-contain filter drop-shadow-md"
                     loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -141,13 +150,19 @@ const isReversed = project.layoutReversed;
           {project.id === '620-trio' && (
             <div class="relative min-h-[420px] sm:min-h-[500px] lg:min-h-[580px] overflow-hidden bg-[#101114]">
               <!-- Band Image spanning full container -->
-              <img
-                src="/assets/projects/620-band.jpg"
+              <Picture
+                src={band620Photo}
                 alt="Integrantes de 620 Trío en Estudios ION"
-                width="5520"
-                height="3680"
+                formats={['webp']}
+                width={1200}
+                height={800}
+                widths={[384, 768, 1200]}
+                sizes="(min-width: 1280px) 664px, (min-width: 1024px) 46vw, calc(100vw - 48px)"
+                quality={82}
                 class="absolute inset-0 w-full h-full object-cover object-center opacity-85 transition-transform duration-700 ease-out group-hover/showcase:scale-105 motion-reduce:group-hover/showcase:scale-100"
                 loading="lazy"
+                decoding="async"
+                pictureAttributes={{ class: 'contents' }}
               />
               <div class="absolute inset-0 bg-gradient-to-t from-[#101114] via-[#101114]/50 to-[#101114]/20"></div>
 
@@ -212,13 +227,19 @@ const isReversed = project.layoutReversed;
 
                 <div class="sm:col-span-6">
                   <div class="h-40 sm:h-56 lg:h-64 rounded-2xl overflow-hidden border border-white/15 shadow-2xl transition-transform duration-500 group-hover/showcase:scale-[1.03] motion-reduce:group-hover/showcase:scale-100">
-                    <img
-                      src="/assets/projects/kita-socio.jpg"
+                    <Picture
+                      src={kitaTrainingPhoto}
                       alt="Entrenamiento en KITA FITNESS"
-                      width="762"
-                      height="1354"
+                      formats={['webp']}
+                      width={762}
+                      height={1354}
+                      widths={[320, 480, 762]}
+                      sizes="(min-width: 1280px) 270px, (min-width: 1024px) 19vw, (min-width: 640px) calc(50vw - 84px), calc(100vw - 98px)"
+                      quality={82}
                       class="w-full h-full object-cover"
                       loading="lazy"
+                      decoding="async"
+                      pictureAttributes={{ class: 'contents' }}
                     />
                   </div>
                 </div>
@@ -262,13 +283,19 @@ const isReversed = project.layoutReversed;
 
                 <div class="sm:col-span-6 flex flex-col items-center sm:items-end">
                   <div class="w-full sm:w-56 lg:w-60 h-40 sm:h-56 lg:h-64 rounded-2xl overflow-hidden border border-[#0E7C7B]/20 shadow-xl bg-white transition-transform duration-500 group-hover/showcase:scale-[1.03] motion-reduce:group-hover/showcase:scale-100">
-                    <img
-                      src="/assets/projects/vet-paciente-1.png"
+                    <Picture
+                      src={portexPatientPhoto}
                       alt="Paciente canino en consulta veterinaria"
-                      width="466"
-                      height="666"
+                      formats={['webp']}
+                      width={466}
+                      height={666}
+                      widths={[320, 466]}
+                      sizes="(min-width: 1024px) 240px, (min-width: 640px) 224px, calc(100vw - 98px)"
+                      quality={82}
                       class="w-full h-full object-cover"
                       loading="lazy"
+                      decoding="async"
+                      pictureAttributes={{ class: 'contents' }}
                     />
                   </div>
                 </div>
