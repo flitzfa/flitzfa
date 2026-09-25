@@ -117,7 +117,24 @@ import { siteConfig } from '../data/siteConfig';
   links.forEach((link) => link.addEventListener('click', () => setMenuState(false, true)));
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && isOpen) setMenuState(false, true);
+    if (!isOpen) return;
+
+    if (event.key === 'Escape') {
+      setMenuState(false, true);
+      return;
+    }
+
+    if (event.key === 'Tab' && btn && links.length > 0) {
+      const lastLink = links[links.length - 1];
+
+      if (event.shiftKey && document.activeElement === btn) {
+        event.preventDefault();
+        lastLink.focus();
+      } else if (!event.shiftKey && document.activeElement === lastLink) {
+        event.preventDefault();
+        btn.focus();
+      }
+    }
   });
 
   document.addEventListener('pointerdown', (event) => {
