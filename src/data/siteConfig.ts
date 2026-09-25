@@ -37,17 +37,17 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   brand: {
     name: 'flitzfa',
-    tagline: 'Web Design & Development',
+    tagline: 'Diseño & Producción Web',
     dotColor: '#6F8F72',
   },
   author: {
     name: 'Fabricio',
     nickname: 'flitzfa',
-    bio: 'Desarrollo sitios web a medida y me interesa especialmente el punto donde diseño, tecnología e identidad se encuentran.',
+    bio: 'Diseño y dirijo la producción de sitios web a medida, desde la definición de la idea hasta su publicación.',
     fullBio: [
-      'Soy Fabricio. Desarrollo sitios web y me interesa especialmente el punto donde diseño, tecnología e identidad se encuentran.',
-      'Trabajo cada proyecto buscando entender qué necesita realmente antes de decidir cómo debería verse o funcionar.',
-      'No utilizo la misma plantilla para todos: cada negocio, artista o profesional tiene una personalidad propia, y su web debe reflejarla con precisión técnica y sensibilidad visual.'
+      'Soy Fabricio. Diseño y dirijo la producción de sitios web a medida.',
+      'Trabajo directamente con cada proyecto para definir qué necesita, cómo debería verse y qué experiencia debe ofrecer.',
+      'Coordino la implementación con agentes de IA y conduzco las revisiones, pruebas e iteraciones hasta llegar a una versión lista para publicarse.'
     ],
     availableForWork: true,
     availabilityText: 'Disponible para nuevos proyectos',
@@ -61,10 +61,10 @@ export const siteConfig: SiteConfig = {
     location: 'Buenos Aires, Argentina',
   },
   seo: {
-    title: 'flitzfa. — Diseño y Desarrollo Web a Medida',
-    description: 'Diseño y desarrollo sitios web a medida para negocios, profesionales y proyectos que necesitan una presencia digital propia. Cada proyecto es distinto, su web también.',
+    title: 'flitzfa. — Diseño y producción web a medida',
+    description: 'Diseño y dirección de sitios web a medida para negocios, profesionales y proyectos que necesitan una presencia digital propia.',
     image: '/assets/brand/og-share.png',
-    imageAlt: 'flitzfa. — Diseño y desarrollo web a medida',
+    imageAlt: 'flitzfa. — Diseño y producción web a medida',
   },
   nav: [
     { label: 'Proyectos', href: '#proyectos' },

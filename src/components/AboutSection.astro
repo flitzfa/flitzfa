@@ -1,5 +1,5 @@
 ---
-import { toolsAndTech } from '../data/services';
+import { appliedCriteria, technologiesUsed } from '../data/services';
 ---
 
 <section id="sobre-mi" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="about-heading">
@@ -20,7 +20,7 @@ import { toolsAndTech } from '../data/services';
             Soy Fabricio<span class="text-[#6F8F72]">.</span>
           </h2>
           <p class="text-base font-serif italic text-[#263B2B] mt-4 max-w-sm leading-snug">
-            Diseño y desarrollo web a medida para proyectos que buscan una presencia digital propia.
+            Diseño y dirección de producción web para proyectos que buscan una presencia digital propia.
           </p>
         </div>
 
@@ -35,27 +35,41 @@ import { toolsAndTech } from '../data/services';
         <!-- Sincere Editorial Copy (Direct human relationship) -->
         <div class="space-y-6 text-lg sm:text-xl text-[#182019]/90 font-normal leading-relaxed">
           <p>
-            Detrás de flitzfa no hay una agencia masiva ni intermediarios comerciales. Conversás y trabajás directamente con la persona que va a escuchar tu idea, entender lo que necesita tu negocio, diseñar la interfaz y escribir cada línea de código.
+            Trabajo directamente con cada proyecto para entender la idea, definir qué necesita el sitio y tomar las decisiones de estructura, contenido, dirección visual y experiencia.
           </p>
           <p class="text-[#697069] text-base sm:text-lg">
-            Esa relación directa evita teléfonos descompuestos y asegura que la intención original de tu proyecto se mantenga intacta desde la primera charla hasta que el sitio esté publicado y funcionando.
+            La implementación se realiza con asistencia intensiva de agentes de IA. Yo conduzco el proceso: establezco criterios, reviso lo construido, pruebo el sitio y dirijo las iteraciones hasta que está listo para publicarse.
           </p>
           <p class="text-[#697069] text-base sm:text-lg">
-            Trabajo con proyectos de rubros muy diversos: paradores frente al río, músicos independientes, clínicas veterinarias, gimnasios y comercios locales. Esa diversidad me enseñó que no existe una única fórmula: cada web debe reflejar la personalidad genuina de quien está detrás.
+            Trabajo con rubros muy distintos. Esa diversidad me enseñó que no existe una única fórmula: cada web debe responder a la personalidad y las necesidades reales de quien está detrás.
           </p>
         </div>
 
         <!-- Discreet Technologies (Clean, minimal) -->
-        <div class="pt-8 border-t border-[#D9DED4]">
-          <span class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold block mb-3">
-            Herramientas &amp; Criterio técnico
-          </span>
-          <div class="flex flex-wrap gap-2">
-            {toolsAndTech.map((tech) => (
-              <span class="inline-block px-3 py-1 rounded-md bg-[#FAFBF7] border border-[#D9DED4] text-xs font-mono text-[#182019]">
-                {tech}
-              </span>
-            ))}
+        <div class="pt-8 border-t border-[#D9DED4] grid gap-5 sm:grid-cols-2">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold block mb-3">
+              Tecnologías utilizadas
+            </span>
+            <div class="flex flex-wrap gap-2">
+              {technologiesUsed.map((tech) => (
+                <span class="inline-block px-3 py-1 rounded-md bg-[#FAFBF7] border border-[#D9DED4] text-xs font-mono text-[#182019]">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold block mb-3">
+              Criterios aplicados
+            </span>
+            <div class="flex flex-wrap gap-2">
+              {appliedCriteria.map((criterion) => (
+                <span class="inline-block px-3 py-1 rounded-md bg-[#FAFBF7] border border-[#D9DED4] text-xs font-mono text-[#182019]">
+                  {criterion}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

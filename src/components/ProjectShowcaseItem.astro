@@ -51,13 +51,24 @@ const isReversed = project.layoutReversed;
           {project.location}
         </p>
 
-        <!-- Summary -->
-        <p class="mt-4 sm:mt-6 text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
-          {project.summary}
-        </p>
+        <!-- Compact project context -->
+        <dl class="mt-5 sm:mt-6 space-y-4 border-t border-[#D9DED4]/80 pt-5">
+          <div>
+            <dt class="text-[11px] font-mono uppercase tracking-widest text-primary-text font-semibold">Objetivo</dt>
+            <dd class="mt-1.5 text-[#697069] text-sm sm:text-base leading-relaxed">{project.objective}</dd>
+          </div>
+          <div>
+            <dt class="text-[11px] font-mono uppercase tracking-widest text-primary-text font-semibold">Mi participación</dt>
+            <dd class="mt-1.5 text-[#697069] text-sm sm:text-base leading-relaxed">{project.participation}</dd>
+          </div>
+          <div>
+            <dt class="text-[11px] font-mono uppercase tracking-widest text-primary-text font-semibold">Tecnologías utilizadas</dt>
+            <dd class="mt-1.5 text-xs font-mono text-[#697069]">{project.technologies.join(' · ')}</dd>
+          </div>
+        </dl>
 
         <!-- Action Link -->
-        {project.liveUrl && <div class="mt-6 sm:mt-8 pt-1 sm:pt-2">
+        {project.liveUrl && <div class="mt-6 pt-1">
           <a
             href={project.liveUrl}
             target="_blank"
@@ -140,8 +151,8 @@ const isReversed = project.layoutReversed;
 
               <!-- Bottom caption -->
               <div class="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between pt-4 border-t border-[#2A7B9B]/15 z-10 text-xs font-mono text-[#205F77]">
-                <span>Abierto todo el año</span>
-                <span>Servicios de playa &amp; cantina</span>
+                <span>Agenda · Cantina · Ubicación</span>
+                <span>Consultas directas</span>
               </div>
             </div>
           )}
@@ -171,7 +182,7 @@ const isReversed = project.layoutReversed;
                 <div class="flex items-center justify-between gap-2 text-xs font-mono text-white/70">
                   <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E6A15C]/25 text-[#FFC88A] font-medium">
                     <span class="w-1.5 h-1.5 rounded-full bg-[#E6A15C] animate-pulse"></span>
-                    <span>SHOW EN VIVO</span>
+                    <span>MÚSICA INSTRUMENTAL</span>
                   </span>
                   <span class="hidden sm:inline">Estudios ION · Buenos Aires</span>
                 </div>
@@ -221,7 +232,7 @@ const isReversed = project.layoutReversed;
                     CrossFit, Funcional, Musculación y Calistenia. Comunidad y rendimiento diario.
                   </p>
                   <div class="text-xs font-mono text-white/80">
-                    Mariano Santamaría 3457
+                    5 disciplinas · grilla semanal
                   </div>
                 </div>
 
@@ -247,8 +258,8 @@ const isReversed = project.layoutReversed;
 
               <!-- Bottom schedule line -->
               <div class="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between pt-4 border-t border-white/10 z-10 text-xs font-mono text-white/60">
-                <span>Lun–Vie 07:00–22:00 · Sáb 09:00–18:00</span>
-                <span class="text-[#C7FF24] font-semibold">Inscripciones abiertas</span>
+                <span>Disciplinas · Horarios · Ubicación</span>
+                <span class="text-[#C7FF24] font-semibold">Consultas por WhatsApp</span>
               </div>
             </div>
           )}

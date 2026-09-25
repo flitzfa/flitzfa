@@ -42,27 +42,33 @@ export const methodologySteps: MethodologyStep[] = [
   {
     number: '02',
     title: 'Diseñar',
-    description: 'Construir la identidad digital, la paleta cromática, la tipografía y una experiencia visual pensada para tu público.'
+    description: 'Definir la arquitectura, la jerarquía, el recorrido y una dirección visual coherente con la identidad del proyecto.'
   },
   {
     number: '03',
-    title: 'Desarrollar',
-    description: 'Convertir el concepto en una web rápida, accesible, perfectamente responsive y técnicamente sólida.'
+    title: 'Producir',
+    description: 'Coordinar la implementación con agentes de IA y convertir las decisiones de diseño en un sitio funcional y responsive.'
   },
   {
     number: '04',
-    title: 'Refinar',
-    description: 'Inspeccionar visualmente en el navegador, probar en pantallas reales y pulir cada detalle hasta conseguir un resultado memorable.'
+    title: 'Probar y refinar',
+    description: 'Revisar el resultado real en el navegador y dirigir las iteraciones de contenido, diseño, accesibilidad y funcionamiento.'
   }
 ];
 
-export const toolsAndTech: string[] = [
+export const technologiesUsed: string[] = [
   'Astro',
   'Tailwind CSS',
   'TypeScript',
-  'HTML Semántico',
-  'CSS Moderno & Responsive',
-  'Figma',
-  'Web Performance',
-  'Accesibilidad'
+  'HTML',
+  'CSS',
+  'JavaScript'
+];
+
+export const appliedCriteria: string[] = [
+  'Responsive',
+  'Accesibilidad',
+  'Performance',
+  'SEO técnico',
+  'Revisión visual y funcional'
 ];
