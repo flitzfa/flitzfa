@@ -2,13 +2,13 @@
 import { servicesData } from '../data/services';
 ---
 
-<section id="servicios" class="scroll-mt-20 sm:scroll-mt-24 py-24 sm:py-36 relative" aria-labelledby="services-heading">
+<section id="servicios" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="services-heading">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
     <!-- Editorial Section Header -->
-    <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 mb-16 sm:mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+    <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 mb-12 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#6F8F72] uppercase font-semibold mb-3">
+        <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-primary-text uppercase font-semibold mb-3">
           <span>02 — QUÉ PUEDO HACER</span>
         </div>
         <h2
@@ -33,14 +33,13 @@ import { servicesData } from '../data/services';
     <div class="divide-y divide-[#D9DED4] border-y border-[#D9DED4]">
       {servicesData.map((service) => (
         <div
-          class="group py-12 sm:py-16 transition-colors duration-300 hover:bg-[#FAFBF7]/80 px-4 sm:px-8 -mx-4 sm:-mx-8 rounded-2xl"
-          data-interactive
+          class="group py-10 sm:py-14 transition-colors duration-300 hover:bg-[#FAFBF7]/80 px-4 sm:px-8 -mx-4 sm:-mx-8 rounded-2xl"
         >
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-baseline">
             
             <!-- Number & Primary Title -->
             <div class="lg:col-span-6 flex items-baseline gap-6 sm:gap-8">
-              <span class="font-mono text-sm sm:text-base text-[#6F8F72] font-semibold shrink-0">
+              <span class="font-mono text-sm sm:text-base text-primary-text font-semibold shrink-0">
                 {service.number}
               </span>
               <h3 class="text-2xl sm:text-4xl font-extrabold text-[#182019] tracking-tight group-hover:text-[#263B2B] transition-colors">

@@ -2,16 +2,16 @@
 import { siteConfig } from '../data/siteConfig';
 ---
 
-<footer class="py-12 bg-[#F4F5ED] border-t border-[#D9DED4]/80 text-[#697069]">
+<footer class="py-10 sm:py-12 bg-[#F4F5ED] border-t border-[#D9DED4]/80 text-[#697069]">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-6">
     
     <!-- Brand & Role -->
     <div class="flex items-center gap-4">
-      <a href="#inicio" class="text-xl font-bold tracking-tight text-[#182019] inline-flex items-baseline">
+      <a href="#inicio" class="min-h-11 text-xl font-bold tracking-tight text-[#182019] inline-flex items-center">
         <span>flitzfa</span>
-        <span class="w-1.5 h-1.5 rounded-full bg-[#6F8F72] ml-0.5"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#6F8F72] ml-0.5" aria-hidden="true"></span>
       </a>
-      <span class="text-xs text-[#D9DED4]">|</span>
+      <span class="text-xs text-[#D9DED4]" aria-hidden="true">|</span>
       <span class="text-xs font-mono">{siteConfig.brand.tagline}</span>
     </div>
 
@@ -26,7 +26,8 @@ import { siteConfig } from '../data/siteConfig';
         href={siteConfig.contact.instagram}
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-[#182019] transition-colors"
+        aria-label="Instagram de flitzfa (abre en una nueva pestaña)"
+        class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] transition-colors"
       >
         Instagram
       </a>
@@ -34,7 +35,8 @@ import { siteConfig } from '../data/siteConfig';
         href={siteConfig.contact.github}
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-[#182019] transition-colors"
+        aria-label="GitHub de flitzfa (abre en una nueva pestaña)"
+        class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] transition-colors"
       >
         GitHub
       </a>
@@ -42,7 +44,8 @@ import { siteConfig } from '../data/siteConfig';
         href={siteConfig.contact.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
-        class="hover:text-[#182019] transition-colors"
+        aria-label="WhatsApp de flitzfa (abre en una nueva pestaña)"
+        class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] transition-colors"
       >
         WhatsApp
       </a>

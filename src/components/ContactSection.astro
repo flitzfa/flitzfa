@@ -2,14 +2,14 @@
 import { siteConfig } from '../data/siteConfig';
 ---
 
-<section id="contacto" class="scroll-mt-20 sm:scroll-mt-24 py-28 sm:py-40 relative bg-[#FAFBF7] border-t border-[#D9DED4]" aria-labelledby="contact-heading">
+<section id="contacto" class="scroll-mt-20 sm:scroll-mt-24 py-24 sm:py-32 relative bg-[#FAFBF7] border-t border-[#D9DED4]" aria-labelledby="contact-heading">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     
     <div class="max-w-4xl mx-auto text-center space-y-10">
       
       <!-- Eyebrow -->
-      <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#6F8F72] uppercase font-semibold">
-        <span class="w-2 h-2 rounded-full bg-[#6F8F72]"></span>
+      <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-primary-text uppercase font-semibold">
+        <span class="w-2 h-2 rounded-full bg-[#6F8F72]" aria-hidden="true"></span>
         <span>05 — CONTACTO DIRECTO</span>
       </div>
 
@@ -35,15 +35,15 @@ import { siteConfig } from '../data/siteConfig';
           href={siteConfig.contact.whatsapp}
           target="_blank"
           rel="noopener noreferrer"
-          class="group inline-flex items-center gap-4 px-9 py-5 rounded-full bg-[#263B2B] text-[#F4F5ED] text-lg font-bold tracking-wide hover:bg-[#182019] shadow-md hover:shadow-xl transition-all hover:scale-[1.02]"
-          data-interactive
+          aria-label="Escribime por WhatsApp (abre en una nueva pestaña)"
+          class="group inline-flex min-h-11 items-center gap-4 px-9 py-5 rounded-full bg-[#263B2B] text-[#F4F5ED] text-lg font-bold tracking-wide hover:bg-[#182019] shadow-md hover:shadow-xl transition-[background-color,box-shadow,transform] hover:scale-[1.02] motion-reduce:hover:scale-100"
         >
-          <span class="relative flex h-3 w-3">
+          <span class="relative flex h-3 w-3" aria-hidden="true">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#A8BFA3] opacity-75"></span>
             <span class="relative inline-flex rounded-full h-3 w-3 bg-[#6F8F72]"></span>
           </span>
           <span>Escribime por WhatsApp</span>
-          <span class="text-[#A8BFA3] text-xl group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">↗</span>
+          <span class="text-[#A8BFA3] text-xl group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" aria-hidden="true">↗</span>
         </a>
         <p class="text-xs font-mono text-[#697069]">
           Conversación directa para conocer disponibilidad y presupuestos.
@@ -53,23 +53,25 @@ import { siteConfig } from '../data/siteConfig';
       <!-- Discreet Secondary Channels (Email, Instagram, GitHub) -->
       <div class="pt-12 border-t border-[#D9DED4]/60 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-[#697069]">
         <span>
-          O por correo: <a href={`mailto:${siteConfig.contact.email}`} class="font-medium text-[#182019] hover:text-[#6F8F72] underline ml-1">{siteConfig.contact.email}</a>
+          O por correo: <a href={`mailto:${siteConfig.contact.email}`} class="inline-flex min-h-11 items-center font-medium text-[#182019] hover:text-primary-text underline ml-1">{siteConfig.contact.email}</a>
         </span>
-        <span class="hidden sm:inline text-[#D9DED4]">/</span>
+        <span class="hidden sm:inline text-[#D9DED4]" aria-hidden="true">/</span>
         <a
           href={siteConfig.contact.instagram}
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-[#182019] underline font-medium"
+          aria-label="Instagram de flitzfa (abre en una nueva pestaña)"
+          class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] underline font-medium"
         >
           Instagram ↗
         </a>
-        <span class="hidden sm:inline text-[#D9DED4]">/</span>
+        <span class="hidden sm:inline text-[#D9DED4]" aria-hidden="true">/</span>
         <a
           href={siteConfig.contact.github}
           target="_blank"
           rel="noopener noreferrer"
-          class="hover:text-[#182019] underline font-medium"
+          aria-label="GitHub de flitzfa (abre en una nueva pestaña)"
+          class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] underline font-medium"
         >
           GitHub ↗
         </a>

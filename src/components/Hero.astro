@@ -4,7 +4,7 @@ import { siteConfig } from '../data/siteConfig';
 
 <section
   id="inicio"
-  class="relative flex flex-col justify-between pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full overflow-hidden"
+  class="scroll-mt-20 relative flex flex-col justify-between pt-8 pb-12 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto w-full overflow-hidden"
   aria-labelledby="hero-title"
 >
   <!-- Background Ambient Subtle Glow (Organic Sage) -->
@@ -16,7 +16,7 @@ import { siteConfig } from '../data/siteConfig';
   <!-- Top Availability Indicator -->
   <div class="flex items-center justify-between gap-4 pb-6 sm:pb-8 border-b border-[#D9DED4]/50">
     <div class="inline-flex items-center gap-2.5 text-xs font-mono tracking-wider text-[#697069]">
-      <span class="relative flex h-2 w-2">
+      <span class="relative flex h-2 w-2" aria-hidden="true">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6F8F72] opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-[#6F8F72]"></span>
       </span>
@@ -29,7 +29,7 @@ import { siteConfig } from '../data/siteConfig';
   </div>
 
   <!-- Central Editorial Headline & Copy -->
-  <div class="py-12 sm:py-16 lg:py-24 max-w-5xl">
+  <div class="py-10 sm:py-16 lg:py-24 max-w-5xl">
     <h1
       id="hero-title"
       class="text-4xl sm:text-6xl md:text-7xl lg:text-[86px] font-extrabold tracking-[-0.035em] text-[#182019] leading-[1.06]"
@@ -45,27 +45,27 @@ import { siteConfig } from '../data/siteConfig';
     </p>
 
     <!-- CTAs with Refined Rhythm -->
-    <div class="mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
+    <div class="mt-8 sm:mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
       <a
         href="#contacto"
-        class="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-[#263B2B] text-[#F4F5ED] text-sm font-semibold tracking-wide hover:bg-[#182019] shadow-sm hover:shadow-md transition-all hover:translate-y-[-1px]"
+        class="inline-flex min-h-11 items-center gap-2.5 px-8 py-3 rounded-full bg-[#263B2B] text-[#F4F5ED] text-sm font-semibold tracking-wide hover:bg-[#182019] shadow-sm hover:shadow-md transition-[background-color,box-shadow,transform] hover:translate-y-[-1px] motion-reduce:hover:translate-y-0"
       >
         <span>Hablemos de tu idea</span>
-        <span class="text-[#A8BFA3]">↗</span>
+        <span class="text-[#A8BFA3]" aria-hidden="true">↓</span>
       </a>
 
       <a
         href="#proyectos"
-        class="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-[#FAFBF7] border border-[#D9DED4] text-[#182019] text-sm font-medium hover:border-[#6F8F72] hover:bg-[#DCE7D7]/30 transition-all"
+        class="inline-flex min-h-11 items-center gap-2 px-6 py-3 rounded-full bg-[#FAFBF7] border border-[#D9DED4] text-[#182019] text-sm font-medium hover:border-[#6F8F72] hover:bg-[#DCE7D7]/30 transition-[background-color,border-color]"
       >
         <span>Ver proyectos seleccionados</span>
-        <span class="text-[#6F8F72]">↓</span>
+        <span class="text-[#6F8F72]" aria-hidden="true">↓</span>
       </a>
     </div>
   </div>
 
   <!-- Bottom Editorial Trio: Core Values (Clean, spacious) -->
-  <div class="pt-8 border-t border-[#D9DED4]/60 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
+  <div class="pt-7 sm:pt-8 border-t border-[#D9DED4]/60 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-12">
     <div>
       <p class="text-base sm:text-lg font-bold text-[#182019] mb-1">A medida</p>
       <p class="text-sm text-[#697069] leading-relaxed">Cada sitio pensado específicamente para el proyecto que representa.</p>

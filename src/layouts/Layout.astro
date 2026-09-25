@@ -77,7 +77,7 @@ const structuredData = {
     <!-- Skip to content for accessibility -->
     <a
       href="#contenido-principal"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#263B2B] focus:text-[#F4F5ED] focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#6F8F72]"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#263B2B] focus:text-[#F4F5ED] focus:rounded-md focus:shadow-lg"
     >
       Saltar al contenido principal
     </a>
@@ -106,34 +106,35 @@ const structuredData = {
       const cursor = document.getElementById('custom-cursor');
       if (cursor && window.matchMedia('(pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         let mouseX = -100, mouseY = -100;
-        let isVisible = false;
+        let isInteractive = false;
 
         window.addEventListener('mousemove', (e) => {
           mouseX = e.clientX;
           mouseY = e.clientY;
-          cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
-          if (!isVisible) {
-            cursor.classList.remove('opacity-0');
-            cursor.classList.add('opacity-100');
-            isVisible = true;
-          }
+          cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(${isInteractive ? 1.6 : 1})`;
         });
 
         window.addEventListener('mouseleave', () => {
           cursor.classList.remove('opacity-100');
           cursor.classList.add('opacity-0');
-          isVisible = false;
+          isInteractive = false;
         });
 
-        // Hover effect on links and project cards
-        const interactiveElements = document.querySelectorAll('a, button, [data-interactive]');
+        // The follower appears only over elements that are actually interactive.
+        const interactiveElements = document.querySelectorAll('a, button');
         interactiveElements.forEach((el) => {
           el.addEventListener('mouseenter', () => {
+            isInteractive = true;
+            cursor.classList.remove('opacity-0');
+            cursor.classList.add('opacity-100');
             cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(1.6)`;
             cursor.style.borderColor = 'rgba(111, 143, 114, 0.8)';
             cursor.style.backgroundColor = 'rgba(220, 231, 215, 0.25)';
           });
           el.addEventListener('mouseleave', () => {
+            isInteractive = false;
+            cursor.classList.remove('opacity-100');
+            cursor.classList.add('opacity-0');
             cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(1)`;
             cursor.style.borderColor = 'rgba(111, 143, 114, 0.4)';
             cursor.style.backgroundColor = 'transparent';
