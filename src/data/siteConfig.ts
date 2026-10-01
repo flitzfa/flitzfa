@@ -37,20 +37,20 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   brand: {
     name: 'flitzfa',
-    tagline: 'Diseño & Producción Web',
+    tagline: 'Desarrollo web · Automatización · Soluciones digitales',
     dotColor: '#6F8F72',
   },
   author: {
-    name: 'Fabricio',
+    name: 'Fabricio Enriquez',
     nickname: 'flitzfa',
-    bio: 'Diseño y dirijo la producción de sitios web a medida, desde la definición de la idea hasta su publicación.',
+    bio: 'Desarrollo webs, automatizaciones y soluciones digitales a medida para problemas concretos.',
     fullBio: [
-      'Soy Fabricio. Diseño y dirijo la producción de sitios web a medida.',
-      'Trabajo directamente con cada proyecto para definir qué necesita, cómo debería verse y qué experiencia debe ofrecer.',
-      'Coordino la implementación con agentes de IA y conduzco las revisiones, pruebas e iteraciones hasta llegar a una versión lista para publicarse.'
+      'Soy Fabricio Enriquez. Estudio la Licenciatura en Informática en la UNAHUR.',
+      'Desarrollo soluciones digitales combinando desarrollo web, automatización, integraciones y herramientas de inteligencia artificial.',
+      'Defino las decisiones de experiencia y los criterios técnicos de cada proyecto, y superviso el resultado hasta su publicación.'
     ],
     availableForWork: true,
-    availabilityText: 'Disponible para nuevos proyectos',
+    availabilityText: 'Disponible para proyectos freelance y oportunidades remotas',
   },
   contact: {
     email: 'fabrix.enriquez@gmail.com',
@@ -61,10 +61,10 @@ export const siteConfig: SiteConfig = {
     location: 'Buenos Aires, Argentina',
   },
   seo: {
-    title: 'flitzfa. — Diseño y producción web a medida',
-    description: 'Diseño y dirección de sitios web a medida para negocios, profesionales y proyectos que necesitan una presencia digital propia.',
+    title: 'flitzfa. — Desarrollo web, automatización y soluciones digitales',
+    description: 'Fabricio Enriquez desarrolla sitios web, automatizaciones, integraciones y soluciones digitales a medida para negocios y proyectos.',
     image: '/assets/brand/og-share.png',
-    imageAlt: 'flitzfa. — Diseño y producción web a medida',
+    imageAlt: 'flitzfa. — Desarrollo web, automatización y soluciones digitales',
   },
   nav: [
     { label: 'Proyectos', href: '#proyectos' },

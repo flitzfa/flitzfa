@@ -23,8 +23,11 @@ const structuredData = {
   '@type': 'Person',
   name: siteConfig.author.name,
   alternateName: siteConfig.author.nickname,
+  jobTitle: 'Desarrollador web',
+  description: siteConfig.seo.description,
   url: canonicalURL.href,
   sameAs: [siteConfig.contact.instagram, siteConfig.contact.github],
+  knowsAbout: ['Desarrollo web', 'Automatización', 'Integraciones', 'JavaScript', 'TypeScript', 'Inteligencia artificial aplicada'],
 };
 ---
 
@@ -63,7 +66,7 @@ const structuredData = {
     <meta name="twitter:image" content={imageURL} />
     <meta name="twitter:image:alt" content={imageAlt} />
 
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
 
     <!-- Typography: Plus Jakarta Sans & Newsreader & Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

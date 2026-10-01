@@ -320,6 +320,61 @@ const isReversed = project.layoutReversed;
             </div>
           )}
 
+          <!-- 05 / AUTOMATIC PROSPECTING — Editorial workflow without private data -->
+          {project.id === 'prospeccion-automatica' && (
+            <div class="relative min-h-[520px] sm:min-h-[560px] lg:min-h-[580px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#EEF2E9] via-[#E4EADF] to-[#D7E2D3]">
+              <div
+                class="absolute -top-24 -right-16 w-80 h-80 rounded-full bg-[#6F8F72]/15 blur-3xl pointer-events-none"
+                aria-hidden="true"
+              ></div>
+
+              <div class="relative z-10 flex flex-wrap items-center justify-between gap-3">
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#263B2B] text-[#F4F5ED] text-[11px] font-mono font-semibold uppercase tracking-wider">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#A8BFA3]" aria-hidden="true"></span>
+                  Proyecto propio · En desarrollo
+                </span>
+                <span class="text-[11px] font-mono text-[#4D5F50] uppercase">
+                  Flujo sin datos privados
+                </span>
+              </div>
+
+              <div class="relative z-10 py-8 sm:py-10">
+                <p class="text-xs font-mono uppercase tracking-widest text-[#5A775D] font-semibold mb-3">
+                  De información dispersa a una base accionable
+                </p>
+                <h4 class="max-w-xl text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#182019] tracking-tight leading-[1.08]">
+                  Un proceso comercial preparado para decidir, no para copiar y pegar.
+                </h4>
+
+                <ol class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-y border-[#6F8F72]/35" aria-label="Flujo del sistema automático de prospección">
+                  {[
+                    ['01', 'Prospectos', 'Preparación de candidatos'],
+                    ['02', 'Investigación', 'Contexto relevante'],
+                    ['03', 'Procesamiento / IA', 'Análisis asistido'],
+                    ['04', 'Clasificación', 'Criterios consistentes'],
+                    ['05', 'Google Sheets', 'Información organizada'],
+                    ['06', 'Preparación', 'Base lista para contactar'],
+                  ].map(([number, title, description]) => (
+                    <li class="py-4 sm:py-5 border-b last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0 border-[#6F8F72]/25 sm:pr-4">
+                      <div class="flex items-baseline gap-3">
+                        <span class="text-[10px] font-mono text-[#5A775D] font-bold" aria-hidden="true">{number}</span>
+                        <div>
+                          <p class="text-sm font-bold text-[#182019]">{title}</p>
+                          <p class="mt-1 text-xs text-[#5C685E] leading-relaxed">{description}</p>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div class="relative z-10 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between pt-4 border-t border-[#6F8F72]/30 text-xs font-mono text-[#4D5F50]">
+                <span>Automatización · Webhooks · IA aplicada</span>
+                <span class="font-semibold text-[#263B2B]">Google Sheets como capa operativa</span>
+              </div>
+            </div>
+          )}
+
         </div>
       </div>
 

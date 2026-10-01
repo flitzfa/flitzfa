@@ -94,5 +94,23 @@ export const projectsData: ProjectItem[] = [
       badgeText: '#0B5958'
     },
     layoutReversed: true
+  },
+  {
+    id: 'prospeccion-automatica',
+    number: '05',
+    client: 'Sistema automático de prospección',
+    rubro: 'Automatización · Investigación · Organización comercial',
+    tagline: 'Información preparada para decidir y contactar.',
+    location: 'Proyecto propio · En desarrollo',
+    objective: 'Reducir el trabajo manual de buscar, investigar y ordenar potenciales negocios antes de iniciar un contacto comercial.',
+    participation: 'Diseñé el flujo, la estructura de datos y los criterios de clasificación. El sistema combina automatización, IA aplicada y Google Sheets para preparar cada candidato sin exponer información privada.',
+    technologies: ['Node.js', 'TypeScript', 'Webhooks', 'Google Sheets', 'IA aplicada'],
+    palette: {
+      accent: '#6F8F72',
+      bgPreview: '#E7EDE2',
+      badgeBg: '#DCE7D7',
+      badgeText: '#263B2B'
+    },
+    layoutReversed: false
   }
 ];
