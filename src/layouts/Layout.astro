@@ -111,6 +111,8 @@ const structuredData = {
         window.addEventListener('mousemove', (e) => {
           mouseX = e.clientX;
           mouseY = e.clientY;
+          cursor.classList.remove('opacity-0');
+          cursor.classList.add('opacity-100');
           cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(${isInteractive ? 1.6 : 1})`;
         });
 
@@ -118,9 +120,11 @@ const structuredData = {
           cursor.classList.remove('opacity-100');
           cursor.classList.add('opacity-0');
           isInteractive = false;
+          cursor.style.borderColor = 'rgba(111, 143, 114, 0.4)';
+          cursor.style.backgroundColor = 'transparent';
         });
 
-        // The follower appears only over elements that are actually interactive.
+        // The follower stays visible across the page and emphasizes interactive elements.
         const interactiveElements = document.querySelectorAll('a, button');
         interactiveElements.forEach((el) => {
           el.addEventListener('mouseenter', () => {
@@ -133,8 +137,6 @@ const structuredData = {
           });
           el.addEventListener('mouseleave', () => {
             isInteractive = false;
-            cursor.classList.remove('opacity-100');
-            cursor.classList.add('opacity-0');
             cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(1)`;
             cursor.style.borderColor = 'rgba(111, 143, 114, 0.4)';
             cursor.style.backgroundColor = 'transparent';
