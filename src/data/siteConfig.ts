@@ -69,6 +69,7 @@ export const siteConfig: SiteConfig = {
   nav: [
     { label: 'Proyectos', href: '#proyectos' },
     { label: 'Servicios', href: '#servicios' },
+    { label: 'Demos', href: '#demos' },
     { label: 'Sobre mí', href: '#sobre-mi' },
     { label: 'Contacto', href: '#contacto' },
   ],
