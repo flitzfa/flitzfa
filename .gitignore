@@ -28,5 +28,8 @@ Desktop.ini
 *.temp
 *~
 
+# Private local commercial kit: never commit to the public repository
+docs/business/
+
 # Local visual-review captures
 docs/screenshots/

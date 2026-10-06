@@ -1,5 +1,8 @@
 ---
-import { siteConfig } from '../data/siteConfig';
+import { siteConfig, type NavItem } from '../data/siteConfig';
+interface Props { items?: NavItem[]; }
+const { items = siteConfig.nav } = Astro.props;
+const homeHref = Astro.url.pathname === '/' ? '#inicio' : '/';
 ---
 
 <header
@@ -9,7 +12,7 @@ import { siteConfig } from '../data/siteConfig';
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-20 flex items-center justify-between">
     <!-- Brand Wordmark -->
     <a
-      href="#inicio"
+      href={homeHref}
       class="group inline-flex min-h-11 items-center text-2xl sm:text-[26px] font-bold tracking-tight text-[#182019] hover:opacity-90"
       aria-label="flitzfa. - Inicio"
     >
@@ -19,7 +22,7 @@ import { siteConfig } from '../data/siteConfig';
 
     <!-- Desktop Navigation Links -->
     <nav class="hidden md:flex items-center gap-8" aria-label="Navegación principal">
-      {siteConfig.nav.map((item) => (
+      {items.map((item) => (
         <a
           href={item.href}
           class="inline-flex min-h-11 items-center text-sm font-medium text-[#697069] hover:text-[#182019] transition-colors relative after:content-[''] after:absolute after:bottom-1 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#6F8F72] hover:after:w-full after:transition-[width] after:duration-200"
@@ -59,7 +62,7 @@ import { siteConfig } from '../data/siteConfig';
     aria-hidden="true"
   >
     <nav class="flex flex-col gap-3" aria-label="Menú móvil">
-      {siteConfig.nav.map((item, index) => (
+      {items.map((item, index) => (
         <a
           href={item.href}
           class="mobile-nav-link min-h-11 py-2 text-xl font-medium text-[#182019] hover:text-primary-text flex items-center justify-between border-b border-[#D9DED4]/40"

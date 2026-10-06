@@ -7,7 +7,7 @@ import { siteConfig } from '../data/siteConfig';
     
     <!-- Brand & Role -->
     <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-      <a href="#inicio" class="min-h-11 text-xl font-bold tracking-tight text-[#182019] inline-flex items-center">
+      <a href={Astro.url.pathname === '/' ? '#inicio' : '/'} class="min-h-11 text-xl font-bold tracking-tight text-[#182019] inline-flex items-center">
         <span>flitzfa</span>
         <span class="w-1.5 h-1.5 rounded-full bg-[#6F8F72] ml-0.5" aria-hidden="true"></span>
       </a>
@@ -21,7 +21,8 @@ import { siteConfig } from '../data/siteConfig';
     </div>
 
     <!-- Direct Links -->
-    <div class="flex items-center gap-5 text-xs font-medium">
+    <div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-1 text-xs font-medium">
+      <a href="/partners" aria-current={Astro.url.pathname.replace(/\/$/, "") === "/partners" ? "page" : undefined} class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019]">Colaboraciones</a>
       <a
         href={siteConfig.contact.instagram}
         target="_blank"
