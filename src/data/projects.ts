@@ -42,7 +42,7 @@ export const projectsData: ProjectItem[] = [
     id: '620-trio',
     number: '02',
     client: '620 Trío',
-    rubro: 'Música instrumental · Shows en vivo · Jazz & Fusión',
+    rubro: 'Música instrumental · Shows en vivo · Fusión de folklore, jazz y rock',
     tagline: 'Música en movimiento.',
     location: 'Buenos Aires',
     objective: 'Reunir identidad, historia, integrantes, música, fechas y contratación en un espacio editorial propio.',
