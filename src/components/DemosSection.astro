@@ -20,6 +20,14 @@ const demos = [
     note: 'Armá un pedido y revisá el mensaje de ejemplo, sin enviarlo.',
     url: 'https://catalogo.flitzfa.com.ar/',
   },
+  {
+    title: 'Catálogo mayorista',
+    name: 'Distribuidora Ruta 3',
+    description: 'La lista de precios de tu distribuidora, siempre actualizada y lista para pedir.',
+    features: ['Precios por caja y ofertas', 'Pedido armado por WhatsApp', 'Panel con aumento masivo de precios'],
+    note: 'Armá un pedido y probá un aumento de precios en el panel.',
+    url: 'https://distribuidora.flitzfa.com.ar/',
+  },
 ];
 ---
 
@@ -36,11 +44,12 @@ const demos = [
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 border-y border-[#D9DED4]">
+  <div class="grid grid-cols-1 md:grid-cols-3 border-y border-[#D9DED4]">
     {demos.map((demo, index) => (
       <article class:list={[
         'py-8 sm:py-10 flex flex-col',
-        index === 0 ? 'md:pr-8 lg:pr-12 border-b md:border-b-0 md:border-r border-[#D9DED4]' : 'md:pl-8 lg:pl-12',
+        index > 0 && 'md:pl-6 lg:pl-10',
+        index < demos.length - 1 && 'md:pr-6 lg:pr-10 border-b md:border-b-0 md:border-r border-[#D9DED4]',
       ]}>
         <p class="text-sm text-[#697069] mb-2">{demo.name} · Demo interactiva</p>
         <ItemHeading class="text-2xl sm:text-3xl font-bold tracking-tight text-[#182019]">{demo.title}</ItemHeading>
