@@ -2,8 +2,8 @@
 
 Publicadas el 6 de octubre de 2026:
 
-- Sistema de turnos: https://flitzfa-booking-demo.vercel.app/
-- Catálogo + WhatsApp: https://flitzfa-catalog-demo.vercel.app/
+- Sistema de turnos: https://turnos.flitzfa.com.ar/
+- Catálogo + WhatsApp: https://catalogo.flitzfa.com.ar/
 - Acceso desde el portfolio: https://flitzfa.vercel.app/#demos
 
 Son desarrollos propios con negocios ficticios, no trabajos para clientes.

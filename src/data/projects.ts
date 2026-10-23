@@ -67,7 +67,7 @@ export const projectsData: ProjectItem[] = [
     objective: 'Presentar disciplinas y horarios con claridad y convertir visitas en consultas directas por WhatsApp.',
     participation: 'Adapté la identidad de KITA al entorno web, organicé la información comercial y dirigí las revisiones de experiencia, responsive y accesibilidad.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://flitzfa.github.io/kita-fit/',
+    liveUrl: 'https://kita.flitzfa.com.ar/',
     palette: {
       accent: '#C7FF24',
       bgPreview: '#141416',
@@ -86,7 +86,7 @@ export const projectsData: ProjectItem[] = [
     objective: 'Comunicar confianza, ordenar 18 prestaciones y facilitar turnos, horarios y ubicación.',
     participation: 'Definí la jerarquía del sitio y dirigí las iteraciones de información médica, consultas por WhatsApp, responsive y SEO local.',
     technologies: ['Astro', 'Tailwind CSS', 'TypeScript'],
-    liveUrl: 'https://flitzfa.github.io/portex-vet/',
+    liveUrl: 'https://portex.flitzfa.com.ar/',
     palette: {
       accent: '#0E7C7B',
       bgPreview: '#F0F8F8',
