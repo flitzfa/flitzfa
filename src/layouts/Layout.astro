@@ -25,7 +25,7 @@ const structuredData = {
   alternateName: siteConfig.author.nickname,
   jobTitle: 'Desarrollador web',
   description: siteConfig.seo.description,
-  url: canonicalURL.href,
+  url: Astro.site?.href,
   sameAs: [siteConfig.contact.instagram, siteConfig.contact.github],
   knowsAbout: ['Desarrollo web', 'Automatización', 'Integraciones', 'JavaScript', 'TypeScript', 'Inteligencia artificial aplicada'],
 };
@@ -65,6 +65,9 @@ const structuredData = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageURL} />
     <meta name="twitter:image:alt" content={imageAlt} />
+
+    <!-- Vercel Web Analytics: requires enabling Analytics in the Vercel project -->
+    <script defer src="/_vercel/insights/script.js" is:inline></script>
 
     <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)} />
 

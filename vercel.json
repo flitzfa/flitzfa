@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "flitzfa.vercel.app" }],
+      "destination": "https://flitzfa.com.ar/:path*",
+      "permanent": true
+    }
+  ]
+}

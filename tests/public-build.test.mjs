@@ -10,7 +10,7 @@ test('built partners page includes the public contract', () => {
   for (const content of ['Derivación', 'White label', 'Demos propias', 'https://flitzfa-booking-demo.vercel.app/', 'https://flitzfa-catalog-demo.vercel.app/', '/#proyectos', 'mailto:']) {
     assert.ok(html.includes(content), `Missing public content: ${content}`);
   }
-  assert.match(html, /rel="canonical" href="https:\/\/flitzfa.vercel.app\/partners/);
+  assert.match(html, /rel="canonical" href="https:\/\/flitzfa.com.ar\/partners/);
   assert.ok(checkPublicBuild() > 0);
 });
 

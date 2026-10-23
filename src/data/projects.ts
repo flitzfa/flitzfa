@@ -29,7 +29,7 @@ export const projectsData: ProjectItem[] = [
     objective: 'Trasladar al sitio la experiencia del parador y reunir propuesta, agenda, ubicación y consultas en un recorrido claro.',
     participation: 'Definí el recorrido día–atardecer–noche, adapté la identidad del parador al entorno web y dirigí las revisiones de contenido, responsive, accesibilidad e imágenes.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://parador-mariabeach.vercel.app/',
+    liveUrl: 'https://www.paradormariabeach.com.ar/',
     palette: {
       accent: '#2A7B9B',
       bgPreview: '#EBF4F7',
@@ -48,7 +48,7 @@ export const projectsData: ProjectItem[] = [
     objective: 'Reunir identidad, historia, integrantes, música, fechas y contratación en un espacio editorial propio.',
     participation: 'Definí la narrativa visual de ruta, organicé el contenido y dirigí las iteraciones de fotografía, navegación y responsive.',
     technologies: ['Astro', 'TypeScript', 'CSS'],
-    liveUrl: 'https://web-620.vercel.app/',
+    liveUrl: 'https://620.com.ar/',
     palette: {
       accent: '#E6A15C',
       bgPreview: '#121316',

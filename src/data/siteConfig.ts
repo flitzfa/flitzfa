@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
     availabilityText: 'Disponible para proyectos freelance y oportunidades remotas',
   },
   contact: {
-    email: 'fabrix.enriquez@gmail.com',
+    email: 'hola@flitzfa.com.ar',
     whatsapp: 'https://wa.me/5491123191413',
     whatsappFormatted: '+54 9 11 2319-1413',
     instagram: 'https://www.instagram.com/flitzfa/',
@@ -63,7 +63,7 @@ export const siteConfig: SiteConfig = {
   seo: {
     title: 'flitzfa. — Desarrollo web, automatización y soluciones digitales',
     description: 'Fabricio Enriquez desarrolla sitios web, automatizaciones, integraciones y soluciones digitales a medida para negocios y proyectos.',
-    image: '/assets/brand/og-share.png',
+    image: '/assets/brand/og-share.jpg',
     imageAlt: 'flitzfa. — Desarrollo web, automatización y soluciones digitales',
   },
   nav: [
