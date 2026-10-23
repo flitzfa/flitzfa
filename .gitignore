@@ -33,3 +33,6 @@ docs/business/
 
 # Local visual-review captures
 docs/screenshots/
+
+# Local motion-graphics projects (HyperFrames): captures, audio and renders
+motion/

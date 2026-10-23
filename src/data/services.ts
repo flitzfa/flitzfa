@@ -19,7 +19,7 @@ export const servicesData: ServiceItem[] = [
   {
     number: '02',
     title: 'Automatizaciones',
-    description: 'Flujos que se ocupan de tareas repetitivas: ordenar consultas, actualizar planillas, clasificar información, generar reportes o hacer seguimientos sin copiar y pegar todo a mano.'
+    description: 'Flujos que se ocupan de tareas repetitivas: ordenar consultas, actualizar planillas, clasificar información, generar reportes o hacer seguimientos de forma automática.'
   },
   {
     number: '03',
