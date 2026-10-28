@@ -9,23 +9,20 @@ import DemosSection from './DemosSection.astro';
     <!-- Editorial Section Header -->
     <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 mb-12 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-primary-text uppercase font-semibold mb-3">
-          <span>02 — QUÉ PUEDO HACER</span>
-        </div>
         <h2
           id="services-heading"
           class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.1]"
         >
-          Una solución pensada<br />
+          Qué puedo hacer<br />
           <span class="font-serif italic font-normal text-[#263B2B]">
-            para lo que necesitás<span class="text-[#6F8F72] not-italic">.</span>
+            por tu negocio<span class="text-[#6F8F72] not-italic">.</span>
           </span>
         </h2>
       </div>
 
       <div class="lg:col-span-5 text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
         <p>
-          No parto de una herramienta cerrada. Primero entiendo qué necesitás resolver y después defino si la respuesta es una web, una automatización, una integración o un sistema propio.
+          Antes de hablar de tecnología quiero saber cómo trabajás hoy. Con eso vemos si te conviene una web, automatizar algo, conectar herramientas que ya usás o armar algo propio.
         </p>
       </div>
     </div>
@@ -38,18 +35,14 @@ import DemosSection from './DemosSection.astro';
         >
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-baseline">
             
-            <!-- Number & Primary Title -->
-            <div class="lg:col-span-6 flex items-baseline gap-6 sm:gap-8">
-              <span class="font-mono text-sm sm:text-base text-primary-text font-semibold shrink-0">
-                {service.number}
-              </span>
+            <div class="lg:col-span-6">
               <h3 class="text-2xl sm:text-4xl font-extrabold text-[#182019] tracking-tight group-hover:text-[#263B2B] transition-colors">
                 {service.title}
               </h3>
             </div>
 
             <!-- Narrative Description -->
-            <div class="lg:col-span-6 pl-10 lg:pl-0">
+            <div class="lg:col-span-6">
               <p class="text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
                 {service.description}
               </p>
@@ -60,6 +53,6 @@ import DemosSection from './DemosSection.astro';
       ))}
     </div>
 
-    <DemosSection />
+    <DemosSection showCta />
   </div>
 </section>

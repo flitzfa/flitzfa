@@ -1,12 +1,11 @@
 export interface ProjectItem {
   id: string;
-  number: string;
   client: string;
   rubro: string;
   tagline: string;
   location: string;
-  objective: string;
-  participation: string;
+  story: string;
+  quote?: string;
   technologies: string[];
   liveUrl?: string;
   palette: {
@@ -21,13 +20,12 @@ export interface ProjectItem {
 export const projectsData: ProjectItem[] = [
   {
     id: 'maria-beach',
-    number: '01',
     client: 'María Beach',
     rubro: 'Parador de playa · Gastronomía · Eventos',
     tagline: 'El río tiene su lugar.',
     location: 'Rincón Santa María · Ituzaingó, Corrientes',
-    objective: 'Trasladar al sitio la experiencia del parador y reunir propuesta, agenda, ubicación y consultas en un recorrido claro.',
-    participation: 'Definí el recorrido día–atardecer–noche, adapté la identidad del parador al entorno web y dirigí las revisiones de contenido, responsive, accesibilidad e imágenes.',
+    // TODO(Fabri): si conseguís una frase real de alguien de María Beach, cargala en `quote` y se muestra debajo de la historia.
+    story: 'María Beach es un parador sobre el río en Ituzaingó, Corrientes. Necesitaban una web que transmitiera lo que se vive ahí y que juntara en un solo lugar la propuesta, la agenda, cómo llegar y las consultas. Organicé el sitio como un día en el parador: arranca de día, pasa por el atardecer y termina de noche. También adapté su identidad a la web y revisé textos, imágenes, accesibilidad y cómo se ve en el celular.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://www.paradormariabeach.com.ar/',
     palette: {
@@ -40,13 +38,12 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: '620-trio',
-    number: '02',
     client: '620 Trío',
     rubro: 'Música instrumental · Shows en vivo · Fusión de folklore, jazz y rock',
     tagline: 'Música en movimiento.',
     location: 'Buenos Aires',
-    objective: 'Reunir identidad, historia, integrantes, música, fechas y contratación en un espacio editorial propio.',
-    participation: 'Definí la narrativa visual de ruta, organicé el contenido y dirigí las iteraciones de fotografía, navegación y responsive.',
+    // TODO(Fabri): si conseguís una frase real de alguien de 620 Trío, cargala en `quote` y se muestra debajo de la historia.
+    story: 'Un trío de música instrumental que mezcla folklore, jazz y rock. Querían un sitio propio con su identidad, su historia, los integrantes, la música, las fechas y una forma clara de contratarlos. Armé el diseño alrededor de la idea de una ruta y ordené todo ese contenido. Después trabajé las fotos, la navegación y la versión para celular.',
     technologies: ['Astro', 'TypeScript', 'CSS'],
     liveUrl: 'https://620.com.ar/',
     palette: {
@@ -59,13 +56,12 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: 'kita-fitness',
-    number: '03',
     client: 'KITA FITNESS',
     rubro: 'Gimnasio · CrossFit & Funcional · Rendimiento',
     tagline: 'Forjando disciplina. Construyendo rendimiento.',
     location: 'San Justo · Buenos Aires',
-    objective: 'Presentar disciplinas y horarios con claridad y convertir visitas en consultas directas por WhatsApp.',
-    participation: 'Adapté la identidad de KITA al entorno web, organicé la información comercial y dirigí las revisiones de experiencia, responsive y accesibilidad.',
+    // TODO(Fabri): si conseguís una frase real de alguien de KITA, cargala en `quote` y se muestra debajo de la historia.
+    story: 'KITA es un gimnasio de San Justo con CrossFit, funcional y otras disciplinas. Lo importante era que se entendieran rápido las disciplinas y los horarios, y que quien entra a mirar termine escribiendo por WhatsApp. Pasé su identidad a la web, ordené la información comercial y revisé que se use bien desde el celular.',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     liveUrl: 'https://kita.flitzfa.com.ar/',
     palette: {
@@ -78,13 +74,12 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: 'portex-vet',
-    number: '04',
     client: 'Veterinaria Portex',
     rubro: 'Clínica veterinaria · 18 Especialidades médicas',
     tagline: 'Atención clínica con dedicación para cada paciente.',
     location: 'Isidro Casanova · Buenos Aires',
-    objective: 'Comunicar confianza, ordenar 18 prestaciones y facilitar turnos, horarios y ubicación.',
-    participation: 'Definí la jerarquía del sitio y dirigí las iteraciones de información médica, consultas por WhatsApp, responsive y SEO local.',
+    // TODO(Fabri): si conseguís una frase real de alguien de Portex, cargala en `quote` y se muestra debajo de la historia.
+    story: 'Veterinaria en Isidro Casanova con 18 especialidades. Había que ordenar toda esa información médica sin que abrume, transmitir confianza y que pedir turno, ver los horarios o encontrar la dirección fuera inmediato. Definí qué va primero en cada página, armé las consultas por WhatsApp y trabajé el SEO local para que aparezca cuando alguien de la zona busca una veterinaria.',
     technologies: ['Astro', 'Tailwind CSS', 'TypeScript'],
     liveUrl: 'https://portex.flitzfa.com.ar/',
     palette: {
@@ -97,13 +92,11 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: 'prospeccion-automatica',
-    number: '05',
     client: 'Sistema automático de prospección',
     rubro: 'Automatización · Investigación · Organización comercial',
     tagline: 'Información preparada para decidir y contactar.',
     location: 'Proyecto propio · En desarrollo',
-    objective: 'Reducir el trabajo manual de buscar, investigar y ordenar potenciales negocios antes de iniciar un contacto comercial.',
-    participation: 'Diseñé el flujo, la estructura de datos y los criterios de clasificación. El sistema combina automatización, IA aplicada y Google Sheets para preparar cada candidato sin exponer información privada.',
+    story: 'Es un proyecto mío, todavía en desarrollo. Antes de contactar a un negocio hay que buscarlo, investigarlo y anotarlo, y quiero sacarme ese trabajo manual de encima. Diseñé el flujo, la estructura de datos y los criterios para clasificar cada candidato. Junta automatización, IA y Google Sheets, sin exponer información privada.',
     technologies: ['Node.js', 'TypeScript', 'Webhooks', 'Google Sheets', 'IA aplicada'],
     palette: {
       accent: '#6F8F72',

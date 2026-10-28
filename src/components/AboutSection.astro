@@ -1,5 +1,13 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import { appliedCriteria, technologiesUsed } from '../data/services';
+
+// TODO(Fabri): agregá tu foto como src/assets/about/fabricio.jpg (o .png/.webp), vertical, idealmente 1200px de alto o más.
+// Mientras no exista el archivo, el bloque de la foto no se renderiza.
+const photo = Object.values(
+  import.meta.glob<ImageMetadata>('../assets/about/fabricio.{jpg,jpeg,png,webp}', { eager: true, import: 'default' })
+)[0];
 ---
 
 <section id="sobre-mi" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="about-heading">
@@ -7,12 +15,9 @@ import { appliedCriteria, technologiesUsed } from '../data/services';
     
     <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
       
-      <!-- Left Column: Name & Stated Principle -->
+      <!-- Left Column: Name & photo -->
       <div class="lg:col-span-5 space-y-5 sm:space-y-6">
         <div>
-          <span class="text-xs font-mono tracking-widest text-primary-text uppercase block mb-4 font-semibold">
-            05 — SOBRE MÍ
-          </span>
           <h2
             id="about-heading"
             class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#182019] tracking-tight leading-[1.05]"
@@ -20,13 +25,21 @@ import { appliedCriteria, technologiesUsed } from '../data/services';
             Soy Fabricio<span class="text-[#6F8F72]">.</span>
           </h2>
           <p class="text-base font-serif italic text-[#263B2B] mt-4 max-w-sm leading-snug">
-            Desarrollo web, automatización y soluciones digitales con una mirada práctica y personal.
+            Hago webs y automatizaciones desde Buenos Aires.
           </p>
         </div>
 
-        <p class="text-2xl sm:text-3xl font-serif italic text-[#182019] pt-6 border-t border-[#D9DED4]/60 leading-snug">
-          “Cada problema es distinto. Su solución también debería serlo.”
-        </p>
+        {photo && (
+          <Image
+            src={photo}
+            alt="Fabricio Enriquez"
+            widths={[320, 480, 640, 960]}
+            sizes="(min-width: 1024px) 384px, (min-width: 640px) 320px, calc(100vw - 48px)"
+            class="w-full max-w-xs sm:max-w-sm aspect-[4/5] object-cover object-top rounded-3xl"
+            loading="lazy"
+            decoding="async"
+          />
+        )}
       </div>
 
       <!-- Right Column: Human Direct Relationship & Approach -->
@@ -35,13 +48,16 @@ import { appliedCriteria, technologiesUsed } from '../data/services';
         <!-- Sincere Editorial Copy (Direct human relationship) -->
         <div class="space-y-6 text-lg sm:text-xl text-[#182019]/90 font-normal leading-relaxed">
           <p>
-            Soy Fabricio Enriquez y estudio la Licenciatura en Informática en la UNAHUR. Desarrollo soluciones digitales combinando desarrollo web, automatización, integraciones y herramientas de inteligencia artificial.
+            Soy Fabricio Enriquez, vivo en Buenos Aires y estudio la Licenciatura en Informática en la UNAHUR. Hago webs para negocios y armo automatizaciones para tareas que hoy se hacen a mano.
           </p>
           <p class="text-[#697069] text-base sm:text-lg">
-            Uso herramientas de IA para acelerar la investigación, el desarrollo, las pruebas y la iteración. Las decisiones de experiencia, los criterios técnicos y la revisión final de cada proyecto siguen bajo mi dirección.
+            Trabajo con herramientas de inteligencia artificial: me ayudan a investigar, a programar más rápido y a probar más cosas en menos tiempo. Las decisiones las tomo yo: cómo tiene que funcionar, qué se muestra y qué no, y la revisión final antes de publicar.
           </p>
           <p class="text-[#697069] text-base sm:text-lg">
-            Me interesa entender problemas concretos y construir respuestas útiles, ya sea una presencia web, un proceso automático o una herramienta interna. Trabajo de forma directa, documento las decisiones y pruebo el resultado real antes de publicarlo.
+            Me gusta entender cómo funciona cada negocio antes de proponer algo. Hablás directamente conmigo, dejo anotado por qué se decidió cada cosa y antes de publicar pruebo todo en el celular y en la compu.
+          </p>
+          <p class="text-[#697069] text-base sm:text-lg">
+            Además de proyectos freelance, estoy abierto a trabajar en relación de dependencia de forma remota.
           </p>
         </div>
 

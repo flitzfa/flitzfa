@@ -16,9 +16,6 @@ const automatableTasks = [
 >
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
     <div class="lg:col-span-7">
-      <span class="text-xs font-mono tracking-widest text-primary-text uppercase block mb-4 font-semibold">
-        03 — AUTOMATIZACIÓN
-      </span>
       <h2
         id="automation-heading"
         class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.08]"
@@ -32,10 +29,10 @@ const automatableTasks = [
 
       <div class="mt-7 max-w-2xl space-y-5 text-base sm:text-lg text-[#697069] leading-relaxed">
         <p>
-          Muchas tareas necesarias consumen tiempo sin necesitar una decisión humana en cada paso. Cuando el proceso es claro, una automatización puede encargarse de mover, ordenar o preparar la información.
+          Pasar los datos de un formulario a una planilla, contestar siempre la misma consulta, armar el resumen de la semana. Si se hace siempre igual, probablemente se pueda automatizar.
         </p>
         <p>
-          No se trata de sumar tecnología porque sí, sino de reducir pasos repetitivos y dejarte más tiempo para el trabajo que sí necesita tu criterio.
+          Esas tareas pasan a hacerse solas y vos te quedás con las que necesitan que alguien piense.
         </p>
       </div>
 
@@ -57,16 +54,11 @@ const automatableTasks = [
 
     <div class="lg:col-span-5 lg:pt-10">
       <p class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold mb-4">
-        Tareas que suelen poder simplificarse
+        Algunas cosas que se pueden automatizar
       </p>
       <ul class="border-y border-[#D9DED4] divide-y divide-[#D9DED4]">
-        {automatableTasks.map((task, index) => (
-          <li class="flex items-center gap-4 py-4 sm:py-5 text-[#182019]">
-            <span class="text-xs font-mono text-primary-text font-semibold" aria-hidden="true">
-              {String(index + 1).padStart(2, '0')}
-            </span>
-            <span class="text-sm sm:text-base font-medium">{task}</span>
-          </li>
+        {automatableTasks.map((task) => (
+          <li class="py-4 sm:py-5 text-sm sm:text-base font-medium text-[#182019]">{task}</li>
         ))}
       </ul>
     </div>

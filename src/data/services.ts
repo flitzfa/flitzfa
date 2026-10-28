@@ -1,58 +1,48 @@
 export interface ServiceItem {
-  number: string;
   title: string;
   description: string;
 }
 
 export interface MethodologyStep {
-  number: string;
   title: string;
   description: string;
 }
 
 export const servicesData: ServiceItem[] = [
   {
-    number: '01',
     title: 'Sitios web',
-    description: 'Landing pages, webs para negocios, profesionales, artistas e instituciones, portfolios y experiencias digitales diseñadas alrededor de una identidad y un objetivo concretos.'
+    description: 'Webs para comercios, profesionales, artistas e instituciones. Puede ser una sola página con tus datos y un botón de WhatsApp o un sitio con varias secciones, siempre con tu logo y tus colores.'
   },
   {
-    number: '02',
     title: 'Automatizaciones',
-    description: 'Flujos que se ocupan de tareas repetitivas: ordenar consultas, actualizar planillas, clasificar información, generar reportes o hacer seguimientos de forma automática.'
+    description: 'Para lo que hacés igual todos los días: ordenar consultas, actualizar una planilla, armar un reporte o acordarte de hacer un seguimiento. Se configura una vez y después corre sola.'
   },
   {
-    number: '03',
     title: 'Integraciones',
-    description: 'Conexiones entre las herramientas que ya usa un proyecto —sitio, formularios, correo, planillas, bases de datos o CRM— para que la información circule con menos pasos manuales.'
+    description: 'Conectar lo que ya usás, como la web, los formularios, el mail, las planillas o un CRM, para que los datos pasen de uno a otro sin copiarlos a mano.'
   },
   {
-    number: '04',
     title: 'Sistemas a medida',
-    description: 'Dashboards, paneles internos, catálogos, pequeñas aplicaciones y herramientas administrativas construidas para resolver un proceso específico del negocio.'
+    description: 'Paneles, catálogos, pequeñas aplicaciones o herramientas administrativas para un proceso puntual de tu negocio, cuando la planilla ya te queda chica.'
   }
 ];
 
 export const methodologySteps: MethodologyStep[] = [
   {
-    number: '01',
-    title: 'Entender',
-    description: 'Conocer a fondo la idea, la personalidad de la marca y las necesidades reales del proyecto antes de proponer cualquier solución.'
+    title: 'Charlamos',
+    description: 'Me contás cómo funciona tu negocio y cómo te llegan hoy los clientes. Pregunto bastante, porque de eso depende qué te conviene hacer.'
   },
   {
-    number: '02',
-    title: 'Diseñar',
-    description: 'Definir la arquitectura, el recorrido y las decisiones de experiencia o de proceso que necesita la solución.'
+    title: 'Te muestro una propuesta',
+    description: 'Con lo que hablamos te armo una propuesta concreta: qué incluiría y cómo se vería. La ves antes de que empiece a programar.'
   },
   {
-    number: '03',
-    title: 'Construir',
-    description: 'Convertir esas decisiones en una web, una automatización o una herramienta funcional, integrando IA cuando realmente aporta valor.'
+    title: 'Lo armo y lo ves funcionando',
+    description: 'Programo la web o la automatización y te la muestro andando, para que la pruebes como la va a usar tu cliente.'
   },
   {
-    number: '04',
-    title: 'Probar y refinar',
-    description: 'Revisar el resultado real en el navegador y dirigir las iteraciones de contenido, diseño, accesibilidad y funcionamiento.'
+    title: 'Ajusto con lo que me digas',
+    description: 'Lo que no te cierre o falte, lo cambiamos. Se publica cuando estás conforme.'
   }
 ];
 

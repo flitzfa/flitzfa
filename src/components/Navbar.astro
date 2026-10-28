@@ -62,13 +62,12 @@ const homeHref = Astro.url.pathname === '/' ? '#inicio' : '/';
     aria-hidden="true"
   >
     <nav class="flex flex-col gap-3" aria-label="Menú móvil">
-      {items.map((item, index) => (
+      {items.map((item) => (
         <a
           href={item.href}
-          class="mobile-nav-link min-h-11 py-2 text-xl font-medium text-[#182019] hover:text-primary-text flex items-center justify-between border-b border-[#D9DED4]/40"
+          class="mobile-nav-link min-h-11 py-2 text-xl font-medium text-[#182019] hover:text-primary-text flex items-center border-b border-[#D9DED4]/40"
         >
-          <span>{item.label}</span>
-          <span class="text-xs font-mono text-[#697069]">0{index + 1}</span>
+          {item.label}
         </a>
       ))}
       <a

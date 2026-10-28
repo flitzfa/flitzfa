@@ -12,8 +12,6 @@ export interface SiteConfig {
   author: {
     name: string;
     nickname: string;
-    bio: string;
-    fullBio: string[];
     availableForWork: boolean;
     availabilityText: string;
   };
@@ -37,20 +35,14 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   brand: {
     name: 'flitzfa',
-    tagline: 'Desarrollo web · Automatización · Soluciones digitales',
+    tagline: 'Webs y automatizaciones para negocios · Buenos Aires',
     dotColor: '#6F8F72',
   },
   author: {
     name: 'Fabricio Enriquez',
     nickname: 'flitzfa',
-    bio: 'Desarrollo webs, automatizaciones y soluciones digitales a medida para problemas concretos.',
-    fullBio: [
-      'Soy Fabricio Enriquez. Estudio la Licenciatura en Informática en la UNAHUR.',
-      'Desarrollo soluciones digitales combinando desarrollo web, automatización, integraciones y herramientas de inteligencia artificial.',
-      'Defino las decisiones de experiencia y los criterios técnicos de cada proyecto, y superviso el resultado hasta su publicación.'
-    ],
     availableForWork: true,
-    availabilityText: 'Disponible para proyectos freelance y oportunidades remotas',
+    availabilityText: 'Tomando proyectos freelance',
   },
   contact: {
     email: 'hola@flitzfa.com.ar',
@@ -61,10 +53,10 @@ export const siteConfig: SiteConfig = {
     location: 'Buenos Aires, Argentina',
   },
   seo: {
-    title: 'flitzfa. — Desarrollo web, automatización y soluciones digitales',
-    description: 'Fabricio Enriquez desarrolla sitios web, automatizaciones, integraciones y soluciones digitales a medida para negocios y proyectos.',
+    title: 'flitzfa. — Webs para comercios y negocios de la zona',
+    description: 'Soy Fabricio Enriquez. Hago webs para comercios y pymes de La Matanza y Buenos Aires, con catálogo o turnos y pedidos por WhatsApp, y automatizo tareas repetitivas.',
     image: '/assets/brand/og-share.jpg',
-    imageAlt: 'flitzfa. — Desarrollo web, automatización y soluciones digitales',
+    imageAlt: 'flitzfa. — Webs para comercios y negocios de la zona',
   },
   nav: [
     { label: 'Proyectos', href: '#proyectos' },

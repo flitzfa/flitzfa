@@ -13,7 +13,7 @@ const navigation = [
 ];
 const audiences = ['Gráficas', 'Community managers', 'Diseño y branding', 'Agencias pequeñas', 'Fotografía y producción', 'Consultoría y marketing'];
 const areas = [
-  { name: 'Sitios web', description: 'Una presencia propia para presentar un negocio, ordenar su propuesta o recibir consultas. Landings, webs de negocios, portfolios, institucionales y experiencias personalizadas.' },
+  { name: 'Sitios web', description: 'Una web propia para presentar el negocio y recibir consultas. Landings, webs de negocios, portfolios o sitios institucionales.' },
   { name: 'Automatizaciones', description: 'Menos tareas repetidas y menos información copiada a mano. Formularios, organización de consultas, seguimiento y flujos entre herramientas, con asistencia de IA cuando aporte valor.' },
   { name: 'Sistemas', description: 'Herramientas para trabajar mejor puertas adentro: paneles, gestión y soluciones a medida para un proceso que hoy queda repartido entre planillas y mensajes.' },
   { name: 'Integraciones', description: 'Conectar lo que el negocio ya usa: Google Workspace, correo, bases de datos y herramientas externas mediante APIs o webhooks. También WhatsApp cuando la integración disponible lo permita.' },
@@ -42,19 +42,19 @@ const faqs = [
   <main id="contenido-principal" tabindex="-1" class="partners-page">
     <section class="partner-wrap partner-hero" aria-labelledby="partner-title">
       <p class="partner-kicker">Colaboraciones</p>
-      <h1 id="partner-title">Tu vínculo con el cliente.<br /><span>Mi apoyo en la parte técnica.</span></h1>
+      <h1 id="partner-title">Para agencias y freelancers<br /><span>que necesitan una mano técnica.</span></h1>
       <div class="hero-bottom">
         <div>
           <p class="partner-lead">Si tus clientes necesitan algo técnico que vos no ofrecés, podemos trabajar juntos.</p>
-          <p class="partner-copy">Soy Fabricio, de flitzfa. Desarrollo webs, automatizaciones, integraciones y sistemas para complementar el trabajo de profesionales y equipos que ya acompañan a negocios.</p>
+          <p class="partner-copy">Soy Fabricio, de flitzfa. Hago webs, automatizaciones, integraciones y sistemas, y puedo sumarme a lo que ya hacés con tus clientes.</p>
           <div class="partner-actions">
             <a class="partner-button" href="#contacto">Hablemos</a>
             <a class="partner-text-link" href="#resolver">Ver qué puedo resolver <span aria-hidden="true">↓</span></a>
           </div>
         </div>
         <aside class="hero-note" aria-label="La idea de la colaboración">
-          <p>Una necesidad nueva no tiene por qué quedar afuera de la conversación.</p>
-          <span>Vos aportás el contexto del cliente. Yo, una forma de resolverlo.</span>
+          <p>Si un cliente te pide una web o automatizar algo, no tenés que decirle que no.</p>
+          <span>Vos conocés al cliente y sabés qué le hace falta. La parte técnica, desde la propuesta hasta la entrega, queda de mi lado.</span>
         </aside>
       </div>
     </section>
@@ -90,8 +90,8 @@ const faqs = [
 
     <section id="resolver" class="partner-wrap partner-section" aria-labelledby="areas-title">
       <div class="section-intro">
-        <h2 id="areas-title">Primero el problema.<br /><span>Después, la herramienta.</span></h2>
-        <p class="partner-copy">Puede ser una web que falta, un proceso manual que se repite o herramientas que no se hablan entre sí.</p>
+        <h2 id="areas-title">Qué puedo resolver<br /><span>para tus clientes.</span></h2>
+        <p class="partner-copy">Por ejemplo, un cliente que todavía no tiene web, o que pasa datos a mano de una planilla a otra.</p>
       </div>
       <div class="areas-list">{areas.map((area) => (
         <article><h3>{area.name}</h3><p>{area.description}</p></article>
@@ -101,7 +101,7 @@ const faqs = [
     <section class="partner-wrap demos-block" aria-label="Demos propias de flitzfa">
       <DemosSection headingLevel={2} ctaLabel="Probar demo" title="Ejemplos que podés probar y mostrar." description="Estas son demos propias con negocios ficticios. Sirven para conversar sobre una necesidad y pueden adaptarse a distintos rubros; no son trabajos realizados para esos negocios." />
       <div class="other-work">
-        <p>También desarrollo automatizaciones propias y soluciones para organizar trabajo. Si querés conocer mi enfoque visual, podés recorrer los proyectos web del portfolio.</p>
+        <p>También tengo automatizaciones propias, como un sistema de prospección que estoy armando. Las webs que hice para clientes reales están en el portfolio.</p>
         <a class="partner-text-link" href="/#proyectos">Ver proyectos web <span aria-hidden="true">↗</span></a>
       </div>
     </section>
@@ -114,7 +114,7 @@ const faqs = [
     <section class="philosophy" aria-labelledby="philosophy-title">
       <div class="partner-wrap philosophy-inner">
         <h2 id="philosophy-title">La idea es complementar<br /><span>lo que ya hacés.</span></h2>
-        <div><p>No busco reemplazar tu trabajo ni desplazar tu relación con el cliente. Acordamos cómo participar y mantenemos una comunicación clara.</p><p>Si una solución más simple alcanza, la propongo. Si algo no hace falta o necesita comprobarse, lo hablamos antes de venderlo.</p></div>
+        <div><p>Tu relación con el cliente sigue siendo tuya. Antes de arrancar acordamos cómo participo y cómo nos comunicamos.</p><p>Si una solución más simple alcanza, la propongo. Si algo no hace falta o necesita comprobarse, lo hablamos antes de venderlo.</p></div>
       </div>
     </section>
 
@@ -178,9 +178,8 @@ const faqs = [
   .other-work { display: flex; gap: 36px; align-items: center; justify-content: space-between; padding-block: 28px; }
   .other-work p { max-width: 74ch; font-size: .95rem; }
   .other-work a { flex-shrink: 0; }
-  .partner-steps { counter-reset: step; display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; list-style: none; }
-  .partner-steps li { counter-increment: step; border-top: 1px solid var(--color-border); padding-top: 20px; }
-  .partner-steps li::before { content: '0' counter(step); display: block; color: var(--color-primary-text); font-family: var(--font-mono); font-size: .75rem; margin-bottom: 14px; }
+  .partner-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 28px; list-style: none; }
+  .partner-steps li { border-top: 1px solid var(--color-border); padding-top: 20px; }
   .partner-steps h3 { font-size: 1rem; line-height: 1.5; }
   .partner-steps p { font-size: .875rem; margin-top: 10px; }
   .philosophy { margin-top: 24px; padding-block: 64px; background: var(--color-surface); border-block: 1px solid var(--color-border); }
@@ -213,8 +212,6 @@ const faqs = [
     .areas-list article { grid-template-columns: 1fr; gap: 14px; }
     .other-work { flex-direction: column; align-items: start; gap: 12px; }
     .partner-steps { grid-template-columns: 1fr; gap: 20px; }
-    .partner-steps li { display: grid; grid-template-columns: 28px 1fr; column-gap: 16px; }
-    .partner-steps li::before { grid-row: span 2; padding-top: 5px; }
     .partner-steps p { margin-top: 4px; }
     .philosophy { padding-block: 40px; }
     .partner-contact { padding-block: 32px 64px; }
