@@ -2,8 +2,8 @@ export interface ProjectItem {
   id: string;
   client: string;
   rubro: string;
-  tagline: string;
-  location: string;
+  tagline?: string;
+  location?: string;
   story: string;
   quote?: string;
   technologies: string[];
@@ -55,38 +55,37 @@ export const projectsData: ProjectItem[] = [
     layoutReversed: true
   },
   {
-    id: 'kita-fitness',
-    client: 'KITA FITNESS',
-    rubro: 'Gimnasio · CrossFit & Funcional · Rendimiento',
-    tagline: 'Forjando disciplina. Construyendo rendimiento.',
-    location: 'San Justo · Buenos Aires',
-    // TODO(Fabri): si conseguís una frase real de alguien de KITA, cargala en `quote` y se muestra debajo de la historia.
-    story: 'KITA es un gimnasio de San Justo con CrossFit, funcional y otras disciplinas. Lo importante era que se entendieran rápido las disciplinas y los horarios, y que quien entra a mirar termine escribiendo por WhatsApp. Pasé su identidad a la web, ordené la información comercial y revisé que se use bien desde el celular.',
-    technologies: ['HTML', 'CSS', 'JavaScript'],
-    liveUrl: 'https://kita.flitzfa.com.ar/',
+    id: 'walter-zelaya',
+    client: 'Walter Zelaya',
+    rubro: 'Guitarra · Composición · Jazz y folklore',
+    tagline: 'Cuerdas en movimiento.',
+    location: 'Buenos Aires',
+    // TODO(Fabri): si conseguís una frase real de Walter, cargala en `quote` y se muestra debajo de la historia.
+    story: 'Walter es guitarrista y compositor de jazz y folklore, y también el guitarrista de 620 Trío. Necesitaba juntar en un solo lugar sus proyectos y sus fechas. Le armé un sitio con sus proyectos y su discografía, una agenda de fechas, enlaces a Spotify y contacto por mail y WhatsApp. Ya está online en su propio dominio y lo usa.',
+    technologies: ['Astro', 'TypeScript', 'CSS'],
+    liveUrl: 'https://walterzelaya.com.ar/',
     palette: {
-      accent: '#C7FF24',
-      bgPreview: '#141416',
-      badgeBg: '#232912',
-      badgeText: '#D6FF38'
+      accent: '#C08A4E',
+      bgPreview: '#16130F',
+      badgeBg: '#2A221C',
+      badgeText: '#E3B57E'
     },
     layoutReversed: false
   },
   {
-    id: 'portex-vet',
-    client: 'Veterinaria Portex',
-    rubro: 'Clínica veterinaria · 18 Especialidades médicas',
-    tagline: 'Atención clínica con dedicación para cada paciente.',
-    location: 'Isidro Casanova · Buenos Aires',
-    // TODO(Fabri): si conseguís una frase real de alguien de Portex, cargala en `quote` y se muestra debajo de la historia.
-    story: 'Veterinaria en Isidro Casanova con 18 especialidades. Había que ordenar toda esa información médica sin que abrume, transmitir confianza y que pedir turno, ver los horarios o encontrar la dirección fuera inmediato. Definí qué va primero en cada página, armé las consultas por WhatsApp y trabajé el SEO local para que aparezca cuando alguien de la zona busca una veterinaria.',
-    technologies: ['Astro', 'Tailwind CSS', 'TypeScript'],
-    liveUrl: 'https://portex.flitzfa.com.ar/',
+    id: 'juan-enriquez',
+    client: 'Juan Enriquez',
+    rubro: 'Música · Composición · Docencia',
+    tagline: 'Música con historia.',
+    // TODO(Fabri): si conseguís una frase real de Juan, cargala en `quote` y se muestra debajo de la historia.
+    story: 'Biografía, álbumes destacados, lanzamientos, discografía, shows, proyectos, un reproductor de muestra y un formulario de contacto: todo eso entra en el sitio que le hice a Juan, que es músico, compositor y docente. Quería que su obra y sus distintos proyectos se pudieran ver juntos. Hoy está publicado en su dominio propio y en uso.',
+    technologies: ['HTML', 'Tailwind CSS', 'JavaScript'],
+    liveUrl: 'https://juanenriquez.com.ar/',
     palette: {
-      accent: '#0E7C7B',
-      bgPreview: '#F0F8F8',
-      badgeBg: '#DCF1F1',
-      badgeText: '#0B5958'
+      accent: '#C9974F',
+      bgPreview: '#241B19',
+      badgeBg: '#3A2A22',
+      badgeText: '#E2B66F'
     },
     layoutReversed: true
   },

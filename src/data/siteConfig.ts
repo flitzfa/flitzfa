@@ -53,10 +53,10 @@ export const siteConfig: SiteConfig = {
     location: 'Buenos Aires, Argentina',
   },
   seo: {
-    title: 'flitzfa. — Webs para comercios y negocios de la zona',
-    description: 'Soy Fabricio Enriquez. Hago webs para comercios y pymes de La Matanza y Buenos Aires, con catálogo o turnos y pedidos por WhatsApp, y automatizo tareas repetitivas.',
+    title: 'flitzfa. — Webs para comercios y negocios',
+    description: 'Soy Fabricio Enriquez. Hago webs para comercios y pymes de Buenos Aires, con catálogo o turnos y pedidos por WhatsApp, y automatizo tareas repetitivas.',
     image: '/assets/brand/og-share.jpg',
-    imageAlt: 'flitzfa. — Webs para comercios y negocios de la zona',
+    imageAlt: 'flitzfa. — Webs para comercios y negocios',
   },
   nav: [
     { label: 'Proyectos', href: '#proyectos' },

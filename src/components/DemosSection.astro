@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from 'astro';
 import { siteConfig } from '../data/siteConfig';
 import PhoneFrame from './PhoneFrame.astro';
 import turnosScreen from '../assets/screens/demo-turnos.webp';
@@ -9,7 +10,18 @@ interface Props { headingLevel?: 2 | 3; ctaLabel?: string; title?: string; descr
 const { headingLevel = 3, ctaLabel = 'Ver demo', title = 'Probá cómo podría funcionar en tu negocio.', description = 'Estos ejemplos los armé yo con negocios inventados. Entrá, tocá todo y fijate si algo así te serviría. Se pueden adaptar a otros rubros.', showCta = false } = Astro.props;
 const Heading = headingLevel === 2 ? 'h2' : 'h3';
 const ItemHeading = headingLevel === 2 ? 'h3' : 'h4';
-const demos = [
+type Demo = {
+  title: string;
+  name: string;
+  description: string;
+  features: string[];
+  note?: string;
+  url?: string;
+  screen?: ImageMetadata;
+  screenAlt?: string;
+};
+
+const liveDemos: Demo[] = [
   {
     title: 'Sistema de turnos',
     name: 'Estudio Pausa',
@@ -41,6 +53,24 @@ const demos = [
     screenAlt: 'Demo de Distribuidora Ruta 3 en un celular: buscador de productos, accesos a la lista completa y a ofertas, y los pasos para elegir, enviar y recibir el pedido.',
   },
 ];
+
+// TODO(Fabri): estas dos demos salen de kita.flitzfa.com.ar y portex.flitzfa.com.ar, que todavía tienen la marca real de KITA y Portex.
+// Hay que rebrandearlas a "Bloque Funcional" y "Veterinaria Trébol" (repos locales: ../kita-fit y ../portex-vet) o bajarlas.
+// Cuando estén listas, sumá `url`, `note` y una captura (`screen` + `screenAlt`) y se muestran como las demás.
+const upcomingDemos: Demo[] = [
+  {
+    title: 'Web para gimnasio',
+    name: 'Bloque Funcional',
+    description: 'Las disciplinas y los horarios a la vista, y las consultas van directo a tu WhatsApp.',
+    features: ['Disciplinas y grilla semanal', 'Ubicación y horarios', 'Consultas por WhatsApp'],
+  },
+  {
+    title: 'Web para veterinaria',
+    name: 'Veterinaria Trébol',
+    description: 'Todas las especialidades ordenadas, y pedir turno es mandar un WhatsApp.',
+    features: ['Especialidades ordenadas', 'Aviso de abierto o cerrado según el horario', 'Turnos por WhatsApp'],
+  },
+];
 ---
 
 <div id="demos" class="scroll-mt-28 mt-16 sm:mt-20" aria-labelledby="demos-heading">
@@ -56,36 +86,42 @@ const demos = [
     </p>
   </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 border-y border-[#D9DED4]">
+  {[liveDemos, upcomingDemos].map((demos, group) => (
+  <div class:list={['grid grid-cols-1 border-b border-[#D9DED4]', group === 0 ? 'md:grid-cols-3 border-t' : 'md:grid-cols-2']}>
     {demos.map((demo, index) => (
       <article class:list={[
         'py-8 sm:py-10 flex flex-col',
         index > 0 && 'md:pl-6 lg:pl-10',
         index < demos.length - 1 && 'md:pr-6 lg:pr-10 border-b md:border-b-0 md:border-r border-[#D9DED4]',
       ]}>
-        <PhoneFrame
-          src={demo.screen}
-          alt={demo.screenAlt}
-          sizes="180px"
-          class="w-[180px] mb-8"
-        />
-        <p class="text-sm text-[#697069] mb-2">{demo.name} · Demo interactiva</p>
+        {demo.screen && demo.screenAlt && (
+          <PhoneFrame
+            src={demo.screen}
+            alt={demo.screenAlt}
+            sizes="180px"
+            class="w-[180px] mb-8"
+          />
+        )}
+        <p class="text-sm text-[#697069] mb-2">{demo.name} · {demo.url ? 'Demo interactiva' : 'Demo en preparación'}</p>
         <ItemHeading class="text-2xl sm:text-3xl font-bold tracking-tight text-[#182019]">{demo.title}</ItemHeading>
         <p class="mt-3 text-base text-[#697069] leading-relaxed max-w-md">{demo.description}</p>
         <ul class="mt-5 space-y-2 text-sm sm:text-base text-[#263B2B] list-disc pl-5 marker:text-[#6F8F72]">
           {demo.features.map((feature) => <li>{feature}</li>)}
         </ul>
-        <p class="mt-5 mb-6 text-sm text-[#697069] leading-relaxed">{demo.note}</p>
-        <a
-          href={demo.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${ctaLabel} de ${demo.title} (abre en otra pestaña)`}
-          class="mt-auto self-start inline-flex min-h-11 items-center px-6 py-3 rounded-full bg-[#263B2B] text-[#F4F5ED] text-sm font-semibold hover:bg-[#182019]"
-        >{ctaLabel}</a>
+        {demo.note && <p class="mt-5 mb-6 text-sm text-[#697069] leading-relaxed">{demo.note}</p>}
+        {demo.url && (
+          <a
+            href={demo.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${ctaLabel} de ${demo.title} (abre en otra pestaña)`}
+            class="mt-auto self-start inline-flex min-h-11 items-center px-6 py-3 rounded-full bg-[#263B2B] text-[#F4F5ED] text-sm font-semibold hover:bg-[#182019]"
+          >{ctaLabel}</a>
+        )}
       </article>
     ))}
   </div>
+  ))}
 
   {showCta && (
     <p class="mt-8 text-base sm:text-lg text-[#182019]">
