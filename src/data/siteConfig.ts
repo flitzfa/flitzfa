@@ -54,7 +54,7 @@ export const siteConfig: SiteConfig = {
   },
   seo: {
     title: 'flitzfa. — Webs y soluciones digitales para negocios',
-    description: 'Soy Fabricio Enriquez. Hago webs y soluciones digitales para comercios y pymes de Buenos Aires: catálogos, turnos, pedidos por WhatsApp y automatizaciones para tareas repetitivas.',
+    description: 'Soy Fabricio Enriquez. Hago webs y soluciones digitales para comercios y pymes de Buenos Aires, desde una página simple hasta un sitio con catálogo, turnos o pedidos, y automatizo tareas repetitivas.',
     image: '/assets/brand/og-share.jpg',
     imageAlt: 'flitzfa. — Webs y soluciones digitales para negocios',
   },
