@@ -35,7 +35,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   brand: {
     name: 'flitzfa',
-    tagline: 'Webs y automatizaciones para negocios · Buenos Aires',
+    tagline: 'Webs, automatizaciones y soluciones digitales · Buenos Aires',
     dotColor: '#6F8F72',
   },
   author: {
@@ -53,10 +53,10 @@ export const siteConfig: SiteConfig = {
     location: 'Buenos Aires, Argentina',
   },
   seo: {
-    title: 'flitzfa. — Webs para comercios y negocios',
-    description: 'Soy Fabricio Enriquez. Hago webs para comercios y pymes de Buenos Aires, con catálogo o turnos y pedidos por WhatsApp, y automatizo tareas repetitivas.',
+    title: 'flitzfa. — Webs y soluciones digitales para negocios',
+    description: 'Soy Fabricio Enriquez. Hago webs y soluciones digitales para comercios y pymes de Buenos Aires: catálogos, turnos, pedidos por WhatsApp y automatizaciones para tareas repetitivas.',
     image: '/assets/brand/og-share.jpg',
-    imageAlt: 'flitzfa. — Webs para comercios y negocios',
+    imageAlt: 'flitzfa. — Webs y soluciones digitales para negocios',
   },
   nav: [
     { label: 'Proyectos', href: '#proyectos' },

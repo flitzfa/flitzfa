@@ -54,12 +54,3 @@ export const technologiesUsed: string[] = [
   'Git / GitHub',
   'IA aplicada'
 ];
-
-export const appliedCriteria: string[] = [
-  'Responsive',
-  'Accesibilidad',
-  'Performance',
-  'SEO técnico',
-  'Revisión visual y funcional',
-  'Automatización de procesos'
-];

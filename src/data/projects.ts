@@ -93,7 +93,7 @@ export const projectsData: ProjectItem[] = [
     id: 'prospeccion-automatica',
     client: 'Sistema automático de prospección',
     rubro: 'Automatización · Investigación · Organización comercial',
-    tagline: 'Información preparada para decidir y contactar.',
+    tagline: 'Negocios investigados y listos para contactar.',
     location: 'Proyecto propio · En desarrollo',
     story: 'Es un proyecto mío, todavía en desarrollo. Antes de contactar a un negocio hay que buscarlo, investigarlo y anotarlo, y quiero sacarme ese trabajo manual de encima. Diseñé el flujo, la estructura de datos y los criterios para clasificar cada candidato. Junta automatización, IA y Google Sheets, sin exponer información privada.',
     technologies: ['Node.js', 'TypeScript', 'Webhooks', 'Google Sheets', 'IA aplicada'],
