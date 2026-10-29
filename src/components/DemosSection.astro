@@ -5,6 +5,8 @@ import PhoneFrame from './PhoneFrame.astro';
 import turnosScreen from '../assets/screens/demo-turnos.webp';
 import catalogoScreen from '../assets/screens/demo-catalogo.webp';
 import distribuidoraScreen from '../assets/screens/demo-distribuidora.webp';
+import gimnasioScreen from '../assets/screens/demo-gimnasio.webp';
+import veterinariaScreen from '../assets/screens/demo-veterinaria.webp';
 
 interface Props { headingLevel?: 2 | 3; ctaLabel?: string; title?: string; description?: string; showCta?: boolean; }
 const { headingLevel = 3, ctaLabel = 'Ver demo', title = 'Probá cómo podría funcionar en tu negocio.', description = 'Estos ejemplos los armé yo con negocios inventados. Entrá, tocá todo y fijate si algo así te serviría. Se pueden adaptar a otros rubros.', showCta = false } = Astro.props;
@@ -54,22 +56,26 @@ const liveDemos: Demo[] = [
   },
 ];
 
-// TODO(Fabri): estas dos demos salen de kita.flitzfa.com.ar y portex.flitzfa.com.ar, que todavía tienen la marca real de KITA y Portex.
-// Hay que rebrandearlas a "Bloque Funcional" y "Veterinaria Trébol" (repos locales: ../kita-fit y ../portex-vet) o bajarlas.
-// Cuando estén listas, sumá `url`, `note` y una captura (`screen` + `screenAlt`) y pasá showUpcomingDemos a true.
-const showUpcomingDemos = false;
-const upcomingDemos: Demo[] = [
+const siteDemos: Demo[] = [
   {
     title: 'Web para gimnasio',
     name: 'Bloque Funcional',
     description: 'Las disciplinas y los horarios a la vista, y las consultas van directo a tu WhatsApp.',
     features: ['Disciplinas y grilla semanal', 'Ubicación y horarios', 'Consultas por WhatsApp'],
+    note: 'Revisá la grilla y probá pedir una clase: ves el mensaje de ejemplo, sin enviarlo.',
+    url: 'https://gimnasio.flitzfa.com.ar/',
+    screen: gimnasioScreen,
+    screenAlt: 'Demo de Bloque Funcional en un celular: el aviso de demo arriba, la portada “Entrenás en grupo, a tu ritmo.” sobre una sala de entrenamiento y el botón para probar una clase.',
   },
   {
     title: 'Web para veterinaria',
     name: 'Veterinaria Trébol',
-    description: 'Todas las especialidades ordenadas, y pedir turno es mandar un WhatsApp.',
-    features: ['Especialidades ordenadas', 'Aviso de abierto o cerrado según el horario', 'Turnos por WhatsApp'],
+    description: 'Los servicios ordenados, y pedir turno es mandar un WhatsApp.',
+    features: ['Servicios ordenados', 'Aviso de abierto o cerrado según el horario', 'Turnos por WhatsApp'],
+    note: 'Fijate si está abierta ahora y pedí un turno de ejemplo, sin enviarlo.',
+    url: 'https://veterinaria.flitzfa.com.ar/',
+    screen: veterinariaScreen,
+    screenAlt: 'Demo de Veterinaria Trébol en un celular: el aviso de abierto o cerrado, la portada “Cuidamos a tu perro o tu gato como en casa.” y el botón para pedir turno por WhatsApp.',
   },
 ];
 ---
@@ -87,7 +93,7 @@ const upcomingDemos: Demo[] = [
     </p>
   </div>
 
-  {(showUpcomingDemos ? [liveDemos, upcomingDemos] : [liveDemos]).map((demos, group) => (
+  {[liveDemos, siteDemos].map((demos, group) => (
   <div class:list={['grid grid-cols-1 border-b border-[#D9DED4]', group === 0 ? 'md:grid-cols-3 border-t' : 'md:grid-cols-2']}>
     {demos.map((demo, index) => (
       <article class:list={[

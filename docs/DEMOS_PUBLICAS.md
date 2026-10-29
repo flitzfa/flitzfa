@@ -5,6 +5,8 @@ Publicadas el 6 de octubre de 2026:
 - Sistema de turnos: https://turnos.flitzfa.com.ar/
 - Catálogo + WhatsApp: https://catalogo.flitzfa.com.ar/
 - Catálogo mayorista: https://distribuidora.flitzfa.com.ar/
+- Web para gimnasio (Bloque Funcional): https://gimnasio.flitzfa.com.ar/ · repo `flitzfa/demo-gimnasio`
+- Web para veterinaria (Veterinaria Trébol): https://veterinaria.flitzfa.com.ar/ · repo `flitzfa/demo-veterinaria`
 - Acceso desde el portfolio: https://flitzfa.vercel.app/#demos
 
 Son desarrollos propios con negocios ficticios, no trabajos para clientes.

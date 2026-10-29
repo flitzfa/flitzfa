@@ -7,7 +7,7 @@ import { checkPublicBuild } from '../scripts/check-public-build.mjs';
 
 test('built partners page includes the public contract', () => {
   const html = readFileSync('dist/partners/index.html', 'utf8');
-  for (const content of ['Derivación', 'White label', 'Demos propias', 'https://turnos.flitzfa.com.ar/', 'https://catalogo.flitzfa.com.ar/', 'https://distribuidora.flitzfa.com.ar/', '/#proyectos', 'mailto:']) {
+  for (const content of ['Derivación', 'White label', 'Demos propias', 'https://turnos.flitzfa.com.ar/', 'https://catalogo.flitzfa.com.ar/', 'https://distribuidora.flitzfa.com.ar/', 'https://gimnasio.flitzfa.com.ar/', 'https://veterinaria.flitzfa.com.ar/', '/#proyectos', 'mailto:']) {
     assert.ok(html.includes(content), `Missing public content: ${content}`);
   }
   assert.match(html, /rel="canonical" href="https:\/\/flitzfa.com.ar\/partners/);
