@@ -95,7 +95,7 @@ export const projectsData: ProjectItem[] = [
     rubro: 'Automatización · Investigación · Organización comercial',
     tagline: 'Negocios investigados y listos para contactar.',
     location: 'Proyecto propio · En desarrollo',
-    story: 'Es un proyecto mío, todavía en desarrollo. Antes de contactar a un negocio hay que buscarlo, investigarlo y anotarlo, y quiero sacarme ese trabajo manual de encima. Diseñé el flujo, la estructura de datos y los criterios para clasificar cada candidato. Junta automatización, IA y Google Sheets, sin exponer información privada.',
+    story: 'Antes de contactar a un negocio hay que buscarlo, investigarlo y anotarlo, y quiero sacarme ese trabajo manual de encima. Diseñé el flujo, la estructura de datos y los criterios para clasificar cada candidato. Junta automatización, IA y Google Sheets.',
     technologies: ['Node.js', 'TypeScript', 'Webhooks', 'Google Sheets', 'IA aplicada'],
     palette: {
       accent: '#6F8F72',
