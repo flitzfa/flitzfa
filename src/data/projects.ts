@@ -61,7 +61,7 @@ export const projectsData: ProjectItem[] = [
     tagline: 'Cuerdas en movimiento.',
     location: 'Buenos Aires',
     // TODO(Fabri): si conseguís una frase real de Walter, cargala en `quote` y se muestra debajo de la historia.
-    story: 'Walter es guitarrista y compositor de jazz y folklore, y también el guitarrista de 620 Trío. Necesitaba juntar en un solo lugar sus proyectos y sus fechas. Le armé un sitio con sus proyectos y su discografía, una agenda de fechas, enlaces a Spotify y contacto por mail y WhatsApp. Ya está online en su propio dominio y lo usa.',
+    story: 'Walter toca la guitarra en 620 Trío y además compone jazz y folklore con otros proyectos. Necesitaba que todo eso estuviera en un mismo lugar, así que le armé un sitio con su discografía, la agenda de fechas, sus links de Spotify y contacto directo por mail y WhatsApp.',
     technologies: ['Astro', 'TypeScript', 'CSS'],
     liveUrl: 'https://walterzelaya.com.ar/',
     palette: {
@@ -78,7 +78,7 @@ export const projectsData: ProjectItem[] = [
     rubro: 'Música · Composición · Docencia',
     tagline: 'Música con historia.',
     // TODO(Fabri): si conseguís una frase real de Juan, cargala en `quote` y se muestra debajo de la historia.
-    story: 'Biografía, álbumes destacados, lanzamientos, discografía, shows, proyectos, un reproductor de muestra y un formulario de contacto: todo eso entra en el sitio que le hice a Juan, que es músico, compositor y docente. Quería que su obra y sus distintos proyectos se pudieran ver juntos. Hoy está publicado en su dominio propio y en uso.',
+    story: 'La web de Juan tenía que mostrar mucho: es músico, compositor y docente, con discos, lanzamientos, shows y varios proyectos a la vez. La organicé para que se recorra fácil y sumé un reproductor de muestra y un formulario de contacto.',
     technologies: ['HTML', 'Tailwind CSS', 'JavaScript'],
     liveUrl: 'https://juanenriquez.com.ar/',
     palette: {

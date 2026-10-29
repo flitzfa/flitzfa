@@ -56,7 +56,8 @@ const liveDemos: Demo[] = [
 
 // TODO(Fabri): estas dos demos salen de kita.flitzfa.com.ar y portex.flitzfa.com.ar, que todavía tienen la marca real de KITA y Portex.
 // Hay que rebrandearlas a "Bloque Funcional" y "Veterinaria Trébol" (repos locales: ../kita-fit y ../portex-vet) o bajarlas.
-// Cuando estén listas, sumá `url`, `note` y una captura (`screen` + `screenAlt`) y se muestran como las demás.
+// Cuando estén listas, sumá `url`, `note` y una captura (`screen` + `screenAlt`) y pasá showUpcomingDemos a true.
+const showUpcomingDemos = false;
 const upcomingDemos: Demo[] = [
   {
     title: 'Web para gimnasio',
@@ -86,7 +87,7 @@ const upcomingDemos: Demo[] = [
     </p>
   </div>
 
-  {[liveDemos, upcomingDemos].map((demos, group) => (
+  {(showUpcomingDemos ? [liveDemos, upcomingDemos] : [liveDemos]).map((demos, group) => (
   <div class:list={['grid grid-cols-1 border-b border-[#D9DED4]', group === 0 ? 'md:grid-cols-3 border-t' : 'md:grid-cols-2']}>
     {demos.map((demo, index) => (
       <article class:list={[
