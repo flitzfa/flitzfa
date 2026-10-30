@@ -4,7 +4,8 @@ import { siteConfig } from '../data/siteConfig';
 import PhoneFrame from './PhoneFrame.astro';
 import turnosScreen from '../assets/screens/demo-turnos.webp';
 import catalogoScreen from '../assets/screens/demo-catalogo.webp';
-import distribuidoraScreen from '../assets/screens/demo-distribuidora.webp';
+// Comentado mientras la demo está oculta: importarlo publica el archivo en el build aunque no se use.
+// import distribuidoraScreen from '../assets/screens/demo-distribuidora.webp';
 import gimnasioScreen from '../assets/screens/demo-gimnasio.webp';
 import veterinariaScreen from '../assets/screens/demo-veterinaria.webp';
 
@@ -22,6 +23,10 @@ type Demo = {
   screen?: ImageMetadata;
   screenAlt?: string;
 };
+
+// TODO(Fabri): demo oculta por ahora. Para volver a mostrarla: pasá este flag a true, descomentá `distribuidoraScreen` (import y `screen`), devolvé su URL a la lista de
+// tests/public-build.test.mjs, sacá el test 'hidden demo is not in the built pages' y volvé a listarla en docs/DEMOS_PUBLICAS.md.
+const showDistribuidoraDemo = false;
 
 const liveDemos: Demo[] = [
   {
@@ -51,10 +56,12 @@ const liveDemos: Demo[] = [
     features: ['Precios por caja y ofertas', 'Pedido armado por WhatsApp', 'Panel con aumento masivo de precios'],
     note: 'Armá un pedido y probá un aumento de precios en el panel.',
     url: 'https://distribuidora.flitzfa.com.ar/',
-    screen: distribuidoraScreen,
+    // screen: distribuidoraScreen,
     screenAlt: 'Demo de Distribuidora Ruta 3 en un celular: buscador de productos, accesos a la lista completa y a ofertas, y los pasos para elegir, enviar y recibir el pedido.',
   },
 ];
+
+const visibleLiveDemos = liveDemos.filter((demo) => showDistribuidoraDemo || demo.name !== 'Distribuidora Ruta 3');
 
 const siteDemos: Demo[] = [
   {
@@ -93,8 +100,8 @@ const siteDemos: Demo[] = [
     </p>
   </div>
 
-  {[liveDemos, siteDemos].map((demos, group) => (
-  <div class:list={['grid grid-cols-1 border-b border-[#D9DED4]', group === 0 ? 'md:grid-cols-3 border-t' : 'md:grid-cols-2']}>
+  {[visibleLiveDemos, siteDemos].map((demos, group) => (
+  <div class:list={['grid grid-cols-1 border-b border-[#D9DED4]', group === 0 && 'border-t', demos.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2']}>
     {demos.map((demo, index) => (
       <article class:list={[
         'py-8 sm:py-10 flex flex-col',
