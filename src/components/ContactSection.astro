@@ -41,7 +41,7 @@ import { siteConfig } from '../data/siteConfig';
         </a>
       </div>
 
-      <!-- Discreet Secondary Channels (Email, Instagram, GitHub) -->
+      <!-- Discreet Secondary Channels (Email, Instagram, GitHub, LinkedIn) -->
       <div class="pt-12 border-t border-[#D9DED4]/60 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-[#697069]">
         <span>
           O por correo: <a href={`mailto:${siteConfig.contact.email}`} class="inline-flex min-h-11 items-center font-medium text-[#182019] hover:text-primary-text underline ml-1">{siteConfig.contact.email}</a>
@@ -65,6 +65,16 @@ import { siteConfig } from '../data/siteConfig';
           class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] underline font-medium"
         >
           GitHub ↗
+        </a>
+        <span class="hidden sm:inline text-[#D9DED4]" aria-hidden="true">/</span>
+        <a
+          href={siteConfig.contact.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn de Fabricio Enriquez (abre en una nueva pestaña)"
+          class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] underline font-medium"
+        >
+          LinkedIn ↗
         </a>
       </div>
 

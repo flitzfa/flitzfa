@@ -21,6 +21,7 @@ export interface SiteConfig {
     whatsappFormatted: string;
     instagram: string;
     github: string;
+    linkedin: string;
     location: string;
   };
   seo: {
@@ -50,6 +51,7 @@ export const siteConfig: SiteConfig = {
     whatsappFormatted: '+54 9 11 2319-1413',
     instagram: 'https://www.instagram.com/flitzfa/',
     github: 'https://github.com/flitzfa',
+    linkedin: 'https://www.linkedin.com/in/fabricio-enriquez/',
     location: 'Buenos Aires, Argentina',
   },
   seo: {
