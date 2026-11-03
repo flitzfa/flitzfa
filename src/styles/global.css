@@ -68,6 +68,13 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 
+/* Títulos en serif. Va fuera de @layer para pisar font-extrabold y tracking-* de Tailwind en cada título. */
+h1, h2 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
 /* Refined custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -97,8 +104,7 @@ h1, h2, h3, h4 {
   .animate-pulse,
   .hero-rise,
   .hero-line,
-  .hero-dot,
-  .hero-glow {
+  .hero-dot {
     animation: none !important;
   }
 }
@@ -113,14 +119,9 @@ h1, h2, h3, h4 {
   to { transform: none; }
 }
 @keyframes hero-dot {
-  0% { opacity: 0; transform: scale(0); }
-  70% { opacity: 1; transform: scale(1.6); }
-  100% { opacity: 1; transform: scale(1); }
-}
-@keyframes hero-drift {
-  50% { transform: translate(-48px, 36px) scale(1.12); }
+  from { opacity: 0; transform: scale(0); }
+  to { opacity: 1; transform: none; }
 }
 .hero-rise { animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both; }
 .hero-line { display: block; animation: hero-line 1s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both; }
-.hero-dot { display: inline-block; transform-origin: 50% 80%; animation: hero-dot 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) var(--d, 0s) both; }
-.hero-glow { animation: hero-drift 14s ease-in-out infinite; }
+.hero-dot { display: inline-block; transform-origin: 50% 80%; animation: hero-dot 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both; }
