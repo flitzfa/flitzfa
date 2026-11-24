@@ -3,51 +3,37 @@ import { servicesData } from '../data/services';
 import DemosSection from './DemosSection.astro';
 ---
 
-<section id="servicios" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="services-heading">
+<section id="servicios" class="scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="services-heading">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-    
-    <!-- Editorial Section Header -->
-    <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 mb-12 sm:mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+    <div class="border-t border-[#D8DFD5] pt-10 sm:pt-14 mb-12 sm:mb-16 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end">
       <div class="lg:col-span-7">
-        <h2
-          id="services-heading"
-          class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.1]"
-        >
-          Qué puedo hacer<br />
-          <span class="font-serif italic font-normal text-[#263B2B]">
-            por tu negocio<span class="text-[#6F8F72] not-italic">.</span>
-          </span>
+        <h2 id="services-heading" class="type-heading text-[#141D16]">
+          Qué puedo hacer por tu negocio<span class="text-[#4F7A59]">.</span>
         </h2>
       </div>
 
-      <div class="lg:col-span-5 text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
-        <p>
+      <div class="lg:col-span-5">
+        <p class="type-body text-[#515B53] max-w-[52ch]">
           Antes de hablar de tecnología quiero saber cómo trabajás hoy. Con eso vemos si te conviene una web, automatizar algo, conectar herramientas que ya usás o armar algo propio.
         </p>
       </div>
     </div>
 
-    <!-- 4 Expressive Editorial Categories -->
-    <div class="divide-y divide-[#D9DED4] border-y border-[#D9DED4]">
+    <div class="divide-y divide-[#D8DFD5] border-y border-[#D8DFD5]">
       {servicesData.map((service) => (
-        <div
-          class="group py-10 sm:py-14 transition-colors duration-300 hover:bg-[#FAFBF7]/80 px-4 sm:px-8 -mx-4 sm:-mx-8 rounded-2xl"
-        >
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-baseline">
-            
-            <div class="lg:col-span-6">
-              <h3 class="text-2xl sm:text-4xl font-extrabold text-[#182019] tracking-tight group-hover:text-[#263B2B] transition-colors">
+        <div class="group py-8 sm:py-10 transition-colors duration-200 hover:bg-[#FCFDF9] px-4 sm:px-6 -mx-4 sm:-mx-6 rounded-2xl">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-baseline">
+            <div class="lg:col-span-5">
+              <h3 class="type-heading text-[#141D16] group-hover:text-[#1A2E20]">
                 {service.title}
               </h3>
             </div>
 
-            <!-- Narrative Description -->
-            <div class="lg:col-span-6">
-              <p class="text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
+            <div class="lg:col-span-7">
+              <p class="type-body text-[#515B53] max-w-[60ch]">
                 {service.description}
               </p>
             </div>
-
           </div>
         </div>
       ))}

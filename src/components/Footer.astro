@@ -2,33 +2,38 @@
 import { siteConfig } from '../data/siteConfig';
 ---
 
-<footer class="py-10 sm:py-12 bg-[#F4F5ED] border-t border-[#D9DED4]/80 text-[#697069]">
+<footer class="py-10 sm:py-12 bg-[#F5F6F0] border-t border-[#D8DFD5] text-[#515B53]">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col xl:flex-row items-center justify-between gap-6">
-    
-    <!-- Brand & Role -->
     <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
-      <a href={Astro.url.pathname === '/' ? '#inicio' : '/'} class="min-h-11 text-xl font-bold tracking-tight text-[#182019] inline-flex items-center">
+      <a
+        href={Astro.url.pathname === '/' ? '#inicio' : '/'}
+        class="min-h-11 text-[22px] font-bold tracking-[-0.03em] text-[#141D16] inline-flex items-center"
+      >
         <span>flitzfa</span>
-        <span class="w-1.5 h-1.5 rounded-full bg-[#6F8F72] ml-0.5" aria-hidden="true"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#4F7A59] ml-0.5" aria-hidden="true"></span>
       </a>
-      <span class="text-xs text-[#D9DED4]" aria-hidden="true">|</span>
-      <span class="text-xs font-mono leading-relaxed">{siteConfig.brand.tagline}</span>
+      <span class="hidden sm:inline text-[#D8DFD5]" aria-hidden="true">|</span>
+      <span class="type-sm">{siteConfig.brand.tagline}</span>
     </div>
 
-    <!-- Copyright -->
-    <div class="text-xs font-mono">
+    <div class="type-sm">
       <span>© 2026 flitzfa. Todos los derechos reservados.</span>
     </div>
 
-    <!-- Direct Links -->
-    <div class="flex flex-wrap justify-center items-center gap-x-5 gap-y-1 text-xs font-medium">
-      <a href="/partners" aria-current={Astro.url.pathname.replace(/\/$/, "") === "/partners" ? "page" : undefined} class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019]">Colaboraciones</a>
+    <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-1 type-sm font-medium">
+      <a
+        href="/partners"
+        aria-current={Astro.url.pathname.replace(/\/$/, '') === '/partners' ? 'page' : undefined}
+        class="inline-flex min-h-11 items-center hover:text-[#141D16]"
+      >
+        Colaboraciones
+      </a>
       <a
         href={siteConfig.contact.instagram}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Instagram de flitzfa (abre en una nueva pestaña)"
-        class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] transition-colors"
+        class="inline-flex min-h-11 items-center hover:text-[#141D16]"
       >
         Instagram
       </a>
@@ -37,7 +42,7 @@ import { siteConfig } from '../data/siteConfig';
         target="_blank"
         rel="noopener noreferrer"
         aria-label="GitHub de flitzfa (abre en una nueva pestaña)"
-        class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] transition-colors"
+        class="inline-flex min-h-11 items-center hover:text-[#141D16]"
       >
         GitHub
       </a>
@@ -46,7 +51,7 @@ import { siteConfig } from '../data/siteConfig';
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn de Fabricio Enriquez (abre en una nueva pestaña)"
-        class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] transition-colors"
+        class="inline-flex min-h-11 items-center hover:text-[#141D16]"
       >
         LinkedIn
       </a>
@@ -55,11 +60,10 @@ import { siteConfig } from '../data/siteConfig';
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp de flitzfa (abre en una nueva pestaña)"
-        class="inline-flex min-h-11 items-center px-1 -mx-1 hover:text-[#182019] transition-colors"
+        class="inline-flex min-h-11 items-center hover:text-[#141D16]"
       >
         WhatsApp
       </a>
     </div>
-
   </div>
 </footer>

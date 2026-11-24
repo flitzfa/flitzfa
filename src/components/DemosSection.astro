@@ -9,10 +9,25 @@ import catalogoScreen from '../assets/screens/demo-catalogo.webp';
 import gimnasioScreen from '../assets/screens/demo-gimnasio.webp';
 import veterinariaScreen from '../assets/screens/demo-veterinaria.webp';
 
-interface Props { headingLevel?: 2 | 3; ctaLabel?: string; title?: string; description?: string; showCta?: boolean; }
-const { headingLevel = 3, ctaLabel = 'Ver demo', title = 'Probá cómo podría funcionar en tu negocio.', description = 'Estos ejemplos los armé yo con negocios inventados. Entrá, tocá todo y fijate si algo así te serviría. Se pueden adaptar a otros rubros.', showCta = false } = Astro.props;
+interface Props {
+  headingLevel?: 2 | 3;
+  ctaLabel?: string;
+  title?: string;
+  description?: string;
+  showCta?: boolean;
+}
+
+const {
+  headingLevel = 3,
+  ctaLabel = 'Ver demo',
+  title = 'Probá cómo podría funcionar en tu negocio.',
+  description = 'Estos ejemplos los armé yo con negocios inventados. Entrá, tocá todo y fijate si algo así te serviría. Se pueden adaptar a otros rubros.',
+  showCta = false,
+} = Astro.props;
+
 const Heading = headingLevel === 2 ? 'h2' : 'h3';
 const ItemHeading = headingLevel === 2 ? 'h3' : 'h4';
+
 type Demo = {
   title: string;
   name: string;
@@ -87,65 +102,69 @@ const siteDemos: Demo[] = [
 ];
 ---
 
-<div id="demos" class="scroll-mt-28 mt-16 sm:mt-20" aria-labelledby="demos-heading">
-  <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-12 mb-8">
+<div id="demos" class="scroll-mt-28 mt-20 sm:mt-24" aria-labelledby="demos-heading">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 mb-10 items-end">
     <div class="lg:col-span-6">
-      <p class="text-sm font-semibold text-primary-text mb-3">Demos propias</p>
-      <Heading id="demos-heading" class="text-3xl sm:text-4xl font-extrabold text-[#182019] tracking-tight leading-tight">
+      <Heading id="demos-heading" class="type-heading text-[#141D16]">
         {title}
       </Heading>
     </div>
-    <p class="lg:col-span-6 lg:self-end text-base sm:text-lg text-[#697069] leading-relaxed max-w-2xl">
+    <p class="lg:col-span-6 type-body text-[#515B53] max-w-[56ch]">
       {description}
     </p>
   </div>
 
   {[visibleLiveDemos, siteDemos].map((demos, group) => (
-  <div class:list={['grid grid-cols-1 border-b border-[#D9DED4]', group === 0 && 'border-t', demos.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2']}>
-    {demos.map((demo, index) => (
-      <article class:list={[
-        'py-8 sm:py-10 flex flex-col',
-        index > 0 && 'md:pl-6 lg:pl-10',
-        index < demos.length - 1 && 'md:pr-6 lg:pr-10 border-b md:border-b-0 md:border-r border-[#D9DED4]',
-      ]}>
-        {demo.screen && demo.screenAlt && (
-          <PhoneFrame
-            src={demo.screen}
-            alt={demo.screenAlt}
-            sizes="180px"
-            class="w-[180px] mb-8"
-          />
-        )}
-        <p class="text-sm text-[#697069] mb-2">{demo.name} · {demo.url ? 'Demo interactiva' : 'Demo en preparación'}</p>
-        <ItemHeading class="text-2xl sm:text-3xl font-bold tracking-tight text-[#182019]">{demo.title}</ItemHeading>
-        <p class="mt-3 text-base text-[#697069] leading-relaxed max-w-md">{demo.description}</p>
-        <ul class="mt-5 space-y-2 text-sm sm:text-base text-[#263B2B] list-disc pl-5 marker:text-[#6F8F72]">
-          {demo.features.map((feature) => <li>{feature}</li>)}
-        </ul>
-        {demo.note && <p class="mt-5 mb-6 text-sm text-[#697069] leading-relaxed">{demo.note}</p>}
-        {demo.url && (
-          <a
-            href={demo.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${ctaLabel} de ${demo.title} (abre en otra pestaña)`}
-            class="mt-auto self-start inline-flex min-h-11 items-center px-6 py-3 rounded-full bg-[#263B2B] text-[#F4F5ED] text-sm font-semibold hover:bg-[#182019]"
-          >{ctaLabel}</a>
-        )}
-      </article>
-    ))}
-  </div>
+    <div class:list={['grid grid-cols-1 border-b border-[#D8DFD5]', group === 0 && 'border-t', demos.length === 3 ? 'md:grid-cols-3' : 'md:grid-cols-2']}>
+      {demos.map((demo, index) => (
+        <article class:list={[
+          'py-10 sm:py-12 flex flex-col',
+          index > 0 && 'md:pl-8 lg:pl-12',
+          index < demos.length - 1 && 'md:pr-8 lg:pr-12 border-b md:border-b-0 md:border-r border-[#D8DFD5]',
+        ]}>
+          {demo.screen && demo.screenAlt && (
+            <PhoneFrame
+              src={demo.screen}
+              alt={demo.screenAlt}
+              sizes="180px"
+              class="w-[180px] mb-8"
+            />
+          )}
+          <ItemHeading class="type-heading text-[#141D16]">{demo.title}</ItemHeading>
+          <p class="mt-2 type-sm text-[#375B3F] font-medium">
+            {demo.name} · {demo.url ? 'Demo interactiva' : 'En preparación'}
+          </p>
+          <p class="mt-4 type-body text-[#515B53] max-w-[46ch]">{demo.description}</p>
+          <ul class="mt-5 space-y-2 type-body text-[#141D16] list-disc pl-5 marker:text-[#4F7A59]">
+            {demo.features.map((feature) => <li>{feature}</li>)}
+          </ul>
+          {demo.note && <p class="mt-5 mb-7 type-sm text-[#515B53] max-w-[48ch]">{demo.note}</p>}
+          {demo.url && (
+            <a
+              href={demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${ctaLabel} de ${demo.title} (abre en otra pestaña)`}
+              class="mt-auto self-start inline-flex min-h-11 items-center gap-2 px-6 py-3 rounded-full bg-[#1A2E20] text-[#F5F6F0] type-sm font-semibold hover:bg-[#141D16]"
+            >
+              <span>{ctaLabel}</span>
+              <span class="text-[#9BB89E]" aria-hidden="true">↗</span>
+            </a>
+          )}
+        </article>
+      ))}
+    </div>
   ))}
 
   {showCta && (
-    <p class="mt-8 text-base sm:text-lg text-[#182019]">
+    <p class="mt-10 type-body text-[#141D16]">
       ¿Te sirve algo así para tu negocio?{' '}
       <a
         href={siteConfig.contact.whatsapp}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Escribime por WhatsApp (abre en otra pestaña)"
-        class="inline-flex min-h-11 items-center font-semibold underline decoration-[#6F8F72] decoration-2 underline-offset-4 hover:text-[#263B2B]"
+        class="inline-flex min-h-11 items-center font-semibold underline decoration-[#4F7A59] decoration-2 underline-offset-4 hover:text-[#375B3F]"
       >Escribime ↗</a>
     </p>
   )}

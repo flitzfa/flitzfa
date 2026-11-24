@@ -11,23 +11,16 @@ const automatableTasks = [
 
 <section
   id="automatizacion"
-  class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative bg-[#FAFBF7] border-y border-[#D9DED4]/80"
+  class="scroll-mt-24 py-20 sm:py-28 relative bg-[#FCFDF9] border-y border-[#D8DFD5]"
   aria-labelledby="automation-heading"
 >
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
     <div class="lg:col-span-7">
-      <h2
-        id="automation-heading"
-        class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.08]"
-      >
-        ¿Hay algo que hacés manualmente<br class="hidden sm:block" />
-        {' '}
-        <span class="font-serif italic font-normal text-[#263B2B]">
-          todos los días<span class="text-[#6F8F72] not-italic">?</span>
-        </span>
+      <h2 id="automation-heading" class="type-heading text-[#141D16]">
+        ¿Hay algo que hacés a mano todos los días<span class="text-[#4F7A59]">?</span>
       </h2>
 
-      <div class="mt-7 max-w-2xl space-y-5 text-base sm:text-lg text-[#697069] leading-relaxed">
+      <div class="mt-7 max-w-[58ch] space-y-5 type-body text-[#515B53]">
         <p>
           Pasar los datos de un formulario a una planilla, contestar siempre la misma consulta, armar el resumen de la semana. Si se hace siempre igual, probablemente se pueda automatizar.
         </p>
@@ -38,13 +31,13 @@ const automatableTasks = [
 
       <a
         href="#contacto"
-        class="group inline-flex min-h-11 items-center gap-3 mt-8 text-base font-semibold text-[#182019] hover:text-[#263B2B]"
+        class="group inline-flex min-h-11 items-center gap-3 mt-8 type-sm font-semibold text-[#141D16] hover:text-[#375B3F]"
       >
-        <span class="border-b-2 border-[#6F8F72] pb-0.5 group-hover:border-[#263B2B] transition-colors">
+        <span class="border-b-2 border-[#4F7A59] pb-0.5 group-hover:border-[#1A2E20]">
           Contame el proceso
         </span>
         <span
-          class="w-9 h-9 rounded-full flex items-center justify-center border border-[#D9DED4] bg-[#F4F5ED] group-hover:border-[#6F8F72] group-hover:bg-[#DCE7D7]/60 group-hover:translate-x-1 transition-[background-color,border-color,transform] motion-reduce:group-hover:translate-x-0"
+          class="w-9 h-9 rounded-full flex items-center justify-center border border-[#D8DFD5] bg-[#F5F6F0] group-hover:border-[#4F7A59] group-hover:bg-[#DCE8DC]/60 group-hover:translate-y-0.5 motion-reduce:group-hover:translate-y-0"
           aria-hidden="true"
         >
           ↓
@@ -52,13 +45,13 @@ const automatableTasks = [
       </a>
     </div>
 
-    <div class="lg:col-span-5 lg:pt-10">
-      <p class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold mb-4">
-        Algunas cosas que se pueden automatizar
-      </p>
-      <ul class="border-y border-[#D9DED4] divide-y divide-[#D9DED4]">
+    <div class="lg:col-span-5 lg:pt-3">
+      <h3 class="type-sm font-semibold text-[#375B3F] mb-4">
+        Algunas tareas que se pueden automatizar
+      </h3>
+      <ul class="border-y border-[#D8DFD5] divide-y divide-[#D8DFD5]">
         {automatableTasks.map((task) => (
-          <li class="py-4 sm:py-5 text-sm sm:text-base font-medium text-[#182019]">{task}</li>
+          <li class="py-4 type-body font-medium text-[#141D16]">{task}</li>
         ))}
       </ul>
     </div>

@@ -3,34 +3,24 @@ import { projectsData } from '../data/projects';
 import ProjectShowcaseItem from './ProjectShowcaseItem.astro';
 ---
 
-<section id="proyectos" class="scroll-mt-20 sm:scroll-mt-24 pt-16 pb-8 sm:pt-24 sm:pb-16 relative" aria-labelledby="projects-heading">
-  <!-- Section Editorial Header -->
-  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-10 sm:mb-16">
-    <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-      
+<section id="proyectos" class="scroll-mt-24 pt-20 pb-8 sm:pt-28 sm:pb-16 relative" aria-labelledby="projects-heading">
+  <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-12 sm:mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-end">
       <div class="lg:col-span-7">
-        <h2
-          id="projects-heading"
-          class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.1]"
-        >
-          Lo que vengo<br />
-          <span class="font-serif italic font-normal text-[#263B2B]">
-            haciendo<span class="text-[#6F8F72] not-italic">.</span>
-          </span>
+        <h2 id="projects-heading" class="type-heading text-[#141D16]">
+          Lo que vengo haciendo<span class="text-[#4F7A59]">.</span>
         </h2>
       </div>
 
-      <div class="lg:col-span-5 text-[#697069] text-base sm:text-lg leading-relaxed font-normal">
-        <p>
+      <div class="lg:col-span-5">
+        <p class="type-body text-[#515B53] max-w-[52ch]">
           Cuatro webs que hice para clientes, todas publicadas y en uso, y un sistema propio que todavía estoy armando. Entrá a cualquiera y recorrela.
         </p>
       </div>
-
     </div>
   </div>
 
-  <!-- Showcase Items List (Large Editorial Presentation) -->
-  <div class="projects-list">
+  <div class="projects-list border-t border-[#D8DFD5]">
     {projectsData.map((project) => (
       <ProjectShowcaseItem project={project} />
     ))}

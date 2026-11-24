@@ -17,7 +17,6 @@ interface Props {
 const { project } = Astro.props;
 const isReversed = project.layoutReversed;
 
-// Mobile capture of the live site, plus a real photo or logo from the client when there is one.
 const showcases: Record<string, { screen: ImageMetadata; screenAlt: string; photo?: { src: ImageMetadata; alt: string }; logo?: boolean }> = {
   'maria-beach': {
     screen: mariaBeachScreen,
@@ -43,113 +42,107 @@ const showcase = showcases[project.id];
 ---
 
 <article
-  class="project-item py-14 sm:py-20 lg:py-28 border-b border-[#D9DED4]/60 last:border-b-0"
+  class="project-item py-16 sm:py-22 lg:py-26 border-b border-[#D8DFD5] last:border-b-0"
   id={project.id}
 >
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-
-    <div class={`grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center ${isReversed ? 'lg:grid-flow-dense' : ''}`}>
-      
-      <!-- Text / Editorial Content Column -->
+    <div class={`grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center ${isReversed ? 'lg:grid-flow-dense' : ''}`}>
+      <!-- Editorial Content Column -->
       <div class={`lg:col-span-5 flex flex-col justify-center ${isReversed ? 'lg:col-start-8' : 'lg:col-start-1'}`}>
-        
-        <p class="mb-4 sm:mb-5 font-mono text-xs text-[#697069] tracking-wider uppercase">
-          {project.rubro}
-        </p>
-
-        <!-- Client Name -->
-        <h3 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#182019] tracking-tight leading-[1.06]">
+        <h3 class="type-heading text-[#141D16]">
           {project.client}
         </h3>
 
+        <p class="mt-3 type-sm text-[#375B3F] font-medium">
+          {project.rubro}{project.location ? ` · ${project.location}` : ''}
+        </p>
+
         {project.tagline && (
-          <p class="mt-3 text-xl sm:text-2xl font-serif italic text-[#263B2B]">
+          <p class="mt-4 type-body font-serif italic text-[#1A2E20]">
             {project.tagline}
           </p>
         )}
 
-        {project.location && (
-          <p class="mt-2 text-xs font-mono text-[#697069]">
-            {project.location}
-          </p>
-        )}
+        <div class="mt-6 border-t border-[#D8DFD5] pt-6">
+          <p class="type-body text-[#515B53] max-w-[58ch]">{project.story}</p>
 
-        <div class="mt-5 sm:mt-6 border-t border-[#D9DED4]/80 pt-5">
-          <p class="text-[#4A524B] text-base leading-relaxed">{project.story}</p>
           {project.quote && (
-            <blockquote class="mt-4 pl-4 border-l-2 border-[#6F8F72] font-serif italic text-lg text-[#263B2B]">
+            <blockquote class="mt-5 pl-4 border-l-2 border-[#4F7A59] font-serif italic type-body text-[#1A2E20]">
               “{project.quote}”
             </blockquote>
           )}
-          <p class="mt-4 text-xs font-mono text-[#697069]">{project.technologies.join(' · ')}</p>
+
+          <p class="mt-5 type-sm text-[#515B53]">{project.technologies.join(' · ')}</p>
         </div>
 
-        <!-- Action Link -->
-        {project.liveUrl && <div class="mt-6 pt-1">
-          <a
-            href={project.liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Ver ${project.client} en vivo (abre en una nueva pestaña)`}
-            class="group/link inline-flex min-h-11 items-center gap-3 text-base font-semibold text-[#182019] hover:text-[#263B2B] transition-colors"
-          >
-            <span class="border-b-2 border-[#6F8F72] pb-0.5 group-hover/link:border-[#263B2B] transition-colors">
-              Ver proyecto en vivo
-            </span>
-            <span
-              class="w-9 h-9 rounded-full flex items-center justify-center border border-[#D9DED4] bg-[#FAFBF7] group-hover/link:border-[#6F8F72] group-hover/link:bg-[#DCE7D7]/60 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-[background-color,border-color,transform] motion-reduce:group-hover/link:translate-x-0 motion-reduce:group-hover/link:translate-y-0"
-              aria-hidden="true"
+        {project.liveUrl && (
+          <div class="mt-7">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ver ${project.client} en vivo (abre en una nueva pestaña)`}
+              class="group/link inline-flex min-h-11 items-center gap-3 type-sm font-semibold text-[#141D16] hover:text-[#375B3F]"
             >
-              <span class="text-xs font-bold text-[#182019]">↗</span>
-            </span>
-          </a>
-        </div>}
+              <span class="border-b-2 border-[#4F7A59] pb-0.5 group-hover/link:border-[#1A2E20]">
+                Ver proyecto en vivo
+              </span>
+              <span
+                class="w-9 h-9 rounded-full flex items-center justify-center border border-[#D8DFD5] bg-[#FCFDF9] group-hover/link:border-[#4F7A59] group-hover/link:bg-[#DCE8DC]/60 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 motion-reduce:group-hover/link:translate-x-0 motion-reduce:group-hover/link:translate-y-0"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </a>
+          </div>
+        )}
       </div>
 
-      <!-- High-Scale Editorial Showcase Column -->
+      <!-- Visual Showcase Column -->
       <div class={`lg:col-span-7 ${isReversed ? 'lg:col-start-1' : 'lg:col-start-6'}`}>
         <div
-          class="group/showcase relative overflow-hidden rounded-3xl sm:rounded-[32px] transition-shadow duration-700 hover:shadow-2xl"
+          class="relative overflow-hidden rounded-3xl transition-shadow duration-300 hover:shadow-xl"
           style={`background-color: ${project.palette.bgPreview};`}
         >
-
           {showcase && (
-            <div class="relative min-h-[460px] sm:min-h-[540px] lg:min-h-[580px] p-8 sm:p-12 flex items-center justify-center">
-              {showcase.photo && (<div
-                class:list={[
-                  'hidden sm:flex shrink-0 -mr-8 -rotate-3 overflow-hidden rounded-2xl border border-black/10 shadow-lg',
-                  showcase.logo ? 'w-48 h-48 items-center justify-center p-6 bg-white/85' : 'w-52 h-72 lg:w-56 lg:h-80',
-                ]}
-              >
-                {showcase.logo ? (
-                  <Image
-                    src={showcase.photo.src}
-                    alt={showcase.photo.alt}
-                    format="png"
-                    width={360}
-                    height={360}
-                    widths={[160, 240, 360]}
-                    sizes="144px"
-                    class="max-h-full max-w-full object-contain"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                ) : (
-                  <Picture
-                    src={showcase.photo.src}
-                    alt={showcase.photo.alt}
-                    formats={['webp']}
-                    width={480}
-                    widths={[320, 480]}
-                    sizes="224px"
-                    quality={82}
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                    pictureAttributes={{ class: 'contents' }}
-                  />
-                )}
-              </div>)}
+            <div class="relative min-h-[440px] sm:min-h-[520px] lg:min-h-[560px] p-8 sm:p-12 flex items-center justify-center">
+              {showcase.photo && (
+                <div
+                  class:list={[
+                    'hidden sm:flex shrink-0 -mr-8 -rotate-2 overflow-hidden rounded-2xl border border-black/10 shadow-lg',
+                    showcase.logo ? 'w-44 h-44 items-center justify-center p-6 bg-white/90' : 'w-52 h-72 lg:w-56 lg:h-80',
+                  ]}
+                >
+                  {showcase.logo ? (
+                    <Image
+                      src={showcase.photo.src}
+                      alt={showcase.photo.alt}
+                      format="png"
+                      width={360}
+                      height={360}
+                      widths={[160, 240, 360]}
+                      sizes="144px"
+                      class="max-h-full max-w-full object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <Picture
+                      src={showcase.photo.src}
+                      alt={showcase.photo.alt}
+                      formats={['webp']}
+                      width={480}
+                      widths={[320, 480]}
+                      sizes="224px"
+                      quality={82}
+                      class="w-full h-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                      pictureAttributes={{ class: 'contents' }}
+                    />
+                  )}
+                </div>
+              )}
               <PhoneFrame
                 src={showcase.screen}
                 alt={showcase.screenAlt}
@@ -159,51 +152,41 @@ const showcase = showcases[project.id];
             </div>
           )}
 
-          <!-- Automatic prospecting: own project, no live site, so it keeps its flow diagram -->
           {project.id === 'prospeccion-automatica' && (
-            <div class="relative min-h-[520px] sm:min-h-[560px] lg:min-h-[580px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between overflow-hidden bg-gradient-to-br from-[#EEF2E9] via-[#E4EADF] to-[#D7E2D3]">
-              <div class="relative z-10 flex flex-wrap items-center justify-between gap-3">
-                <span class="text-[11px] font-mono text-[#4D5F50] uppercase">
-                  Flujo sin datos privados
-                </span>
-              </div>
-
-              <div class="relative z-10 py-8 sm:py-10">
-                <p class="text-xs font-mono uppercase tracking-widest text-[#5A775D] font-semibold mb-3">
-                  De datos sueltos a una lista para contactar
-                </p>
-                <h4 class="max-w-xl text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#182019] tracking-tight leading-[1.08]">
-                  Busca negocios, los investiga y los anota en una planilla para que yo elija a quién escribirle.
+            <div class="relative min-h-[480px] sm:min-h-[540px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between bg-[#E8EFE6]">
+              <div>
+                <h4 class="type-heading text-[#141D16] max-w-xl">
+                  Busca negocios, los investiga y los anota en una planilla.
                 </h4>
-
-                <ol class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-y border-[#6F8F72]/35" aria-label="Flujo del sistema automático de prospección">
-                  {[
-                    ['01', 'Prospectos', 'Busca negocios que podrían necesitar una web'],
-                    ['02', 'Investigación', 'Junta lo que hay de cada uno: rubro, redes, si tiene web'],
-                    ['03', 'IA', 'Resume lo importante de cada negocio'],
-                    ['04', 'Clasificación', 'Los ordena según qué tan buen candidato es'],
-                    ['05', 'Google Sheets', 'Todo queda anotado en una planilla'],
-                    ['06', 'Preparación', 'Yo reviso la lista y elijo a quién escribirle'],
-                  ].map(([number, title, description]) => (
-                    <li class="py-4 sm:py-5 border-b last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0 border-[#6F8F72]/25 sm:pr-4">
-                      <div class="flex items-baseline gap-3">
-                        <span class="text-[10px] font-mono text-[#5A775D] font-bold" aria-hidden="true">{number}</span>
-                        <div>
-                          <p class="text-sm font-bold text-[#182019]">{title}</p>
-                          <p class="mt-1 text-xs text-[#5C685E] leading-relaxed">{description}</p>
-                        </div>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
+                <p class="mt-3 type-sm text-[#375B3F] font-medium">
+                  Flujo automatizado sin datos privados
+                </p>
               </div>
+
+              <ol class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-y border-[#4F7A59]/30" aria-label="Flujo del sistema automático de prospección">
+                {[
+                  ['1', 'Prospectos', 'Busca negocios que podrían necesitar una web'],
+                  ['2', 'Investigación', 'Junta rubro, redes y si ya tienen sitio'],
+                  ['3', 'Resumen con IA', 'Extrae lo más relevante de cada negocio'],
+                  ['4', 'Clasificación', 'Ordena los mejores candidatos primero'],
+                  ['5', 'Google Sheets', 'Deja todo registrado en una planilla'],
+                  ['6', 'Contacto', 'Yo reviso la lista y elijo a quién escribirle'],
+                ].map(([number, title, description]) => (
+                  <li class="py-4 sm:py-5 border-b last:border-b-0 sm:[&:nth-last-child(-n+2)]:border-b-0 lg:[&:nth-last-child(-n+3)]:border-b-0 border-[#4F7A59]/20 sm:pr-4">
+                    <div class="flex items-baseline gap-2.5">
+                      <span class="type-sm font-semibold text-[#375B3F]" aria-hidden="true">{number}.</span>
+                      <div>
+                        <p class="type-body font-semibold text-[#141D16]">{title}</p>
+                        <p class="mt-1 type-sm text-[#515B53]">{description}</p>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
             </div>
           )}
-
         </div>
       </div>
-
     </div>
-
   </div>
 </article>

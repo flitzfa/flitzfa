@@ -10,21 +10,15 @@ const photo = Object.values(
 )[0];
 ---
 
-<section id="sobre-mi" class="scroll-mt-20 sm:scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="about-heading">
+<section id="sobre-mi" class="scroll-mt-24 py-20 sm:py-28 relative" aria-labelledby="about-heading">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-    
-    <div class="border-t border-[#D9DED4] pt-8 sm:pt-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-      
-      <!-- Left Column: Name & photo -->
-      <div class="lg:col-span-5 space-y-5 sm:space-y-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      <div class="lg:col-span-5 space-y-5">
         <div>
-          <h2
-            id="about-heading"
-            class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#182019] tracking-tight leading-[1.05]"
-          >
-            Soy Fabricio<span class="text-[#6F8F72]">.</span>
+          <h2 id="about-heading" class="type-heading text-[#141D16]">
+            Soy Fabricio<span class="text-[#4F7A59]">.</span>
           </h2>
-          <p class="text-base font-serif italic text-[#263B2B] mt-4 max-w-sm leading-snug">
+          <p class="mt-4 type-body font-serif italic text-[#1A2E20] max-w-[34ch]">
             Webs, automatizaciones y soluciones digitales.
           </p>
         </div>
@@ -42,44 +36,31 @@ const photo = Object.values(
         )}
       </div>
 
-      <!-- Right Column: Human Direct Relationship & Approach -->
       <div class="lg:col-span-7 space-y-8">
-        
-        <!-- Sincere Editorial Copy (Direct human relationship) -->
-        <div class="space-y-6 text-lg sm:text-xl text-[#182019]/90 font-normal leading-relaxed">
-          <p>
+        <div class="space-y-5 type-body text-[#515B53] max-w-[60ch]">
+          <p class="text-[#141D16]">
             Soy Fabricio Enriquez, vivo en Buenos Aires y estudio la Licenciatura en Informática en la UNAHUR. Hago webs para negocios y armo automatizaciones para tareas que hoy se hacen a mano.
           </p>
-          <p class="text-[#697069] text-base sm:text-lg">
+          <p>
             Trabajo con herramientas de inteligencia artificial: me ayudan a investigar, a programar más rápido y a probar más cosas en menos tiempo. Las decisiones las tomo yo: cómo tiene que funcionar, qué se muestra y qué no, y la revisión final antes de publicar.
           </p>
-          <p class="text-[#697069] text-base sm:text-lg">
+          <p>
             Me gusta entender cómo funciona cada negocio antes de proponer algo. Hablás directamente conmigo, dejo anotado por qué se decidió cada cosa y antes de publicar pruebo todo en el celular y en la compu.
           </p>
-          <p class="text-[#697069] text-base sm:text-lg">
+          <p>
             Además de proyectos freelance, también estoy abierto a trabajar en relación de dependencia, remoto o presencial en Buenos Aires.
           </p>
         </div>
 
-        <!-- Discreet Technologies (Clean, minimal) -->
-        <div class="pt-8 border-t border-[#D9DED4]">
-          <div>
-            <span class="text-xs font-mono uppercase tracking-widest text-[#697069] font-semibold block mb-3">
-              Herramientas de trabajo
-            </span>
-            <div class="flex flex-wrap gap-2">
-              {technologiesUsed.map((tech) => (
-                <span class="inline-block px-3 py-1 rounded-md bg-[#FAFBF7] border border-[#D9DED4] text-xs font-mono text-[#182019]">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
+        <div class="pt-7 border-t border-[#D8DFD5]">
+          <p class="type-sm font-semibold text-[#141D16] mb-2">
+            Herramientas de trabajo
+          </p>
+          <p class="type-sm text-[#515B53]">
+            {technologiesUsed.join(' · ')}
+          </p>
         </div>
-
       </div>
-
     </div>
-
   </div>
 </section>

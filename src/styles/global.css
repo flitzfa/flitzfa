@@ -1,20 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #F4F5ED;
-  --color-surface: #FAFBF7;
-  --color-primary: #6F8F72;
-  --color-primary-hover: #5A775D;
-  --color-primary-text: #5A775D;
-  --color-secondary: #A8BFA3;
-  --color-soft: #DCE7D7;
-  --color-dark: #263B2B;
-  --color-text-main: #182019;
-  --color-text-muted: #697069;
-  --color-border: #D9DED4;
+  --color-bg: #F5F6F0;
+  --color-surface: #FCFDF9;
+  --color-primary: #4F7A59;
+  --color-primary-hover: #3C6145;
+  --color-primary-text: #375B3F;
+  --color-secondary: #9BB89E;
+  --color-soft: #DCE8DC;
+  --color-dark: #1A2E20;
+  --color-dark-surface: #223A29;
+  --color-text-main: #141D16;
+  --color-text-muted: #515B53;
+  --color-border: #D8DFD5;
+
+  /* Strict 3-size body scale below the hero */
+  --text-heading: clamp(2rem, 3.8vw, 3.25rem);
+  --text-body: 1.0625rem;
+  --text-sm: 0.875rem;
 }
 
-/* Custom properties for Tailwind 4 */
 @theme {
   --color-bg: var(--color-bg);
   --color-surface: var(--color-surface);
@@ -26,21 +31,27 @@
   --color-text-main: var(--color-text-main);
   --color-text-muted: var(--color-text-muted);
   --color-border: var(--color-border);
-  
+
   --font-sans: 'Plus Jakarta Sans Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-editorial: 'Newsreader Variable', Georgia, serif;
   --font-serif: var(--font-editorial);
-  --font-mono: 'Space Mono', monospace;
 }
 
 html {
   background-color: var(--color-bg);
   color: var(--color-text-main);
   font-family: var(--font-sans);
+  font-size: 16px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: var(--text-body);
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
 }
 
 ::selection {
@@ -56,23 +67,46 @@ html {
   transition-duration: 0s;
 }
 
-/* Predictable transitions and responsive touch behavior */
-a, button {
+/* Brisk, predictable interactive transitions */
+a,
+button {
   touch-action: manipulation;
   transition-property: color, background-color, border-color, opacity, box-shadow, transform;
-  transition-duration: 0.25s;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-wrap: balance;
 }
 
-/* Títulos en serif. Va fuera de @layer para pisar font-extrabold y tracking-* de Tailwind en cada título. */
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-serif);
   font-weight: 500;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.028em;
+}
+
+/* Typography scale helpers (strict 3-size body discipline) */
+.type-heading {
+  font-family: var(--font-serif);
+  font-size: var(--text-heading);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.028em;
+}
+
+.type-body {
+  font-size: var(--text-body);
+  line-height: 1.65;
+}
+
+.type-sm {
+  font-size: var(--text-sm);
+  line-height: 1.5;
 }
 
 /* Refined custom scrollbar */
@@ -90,38 +124,36 @@ h1, h2 {
   background: var(--color-secondary);
 }
 
+/* Subtle hero entrance: always legible at rest if motion is reduced */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise {
+  animation: hero-rise 680ms cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  .animate-ping,
-  .animate-pulse,
-  .hero-rise,
-  .hero-line,
-  .hero-dot {
+  .hero-rise {
     animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
-
-/* Hero entrance: staggered via --d on each element */
-@keyframes hero-rise {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes hero-line {
-  from { transform: translateY(110%); }
-  to { transform: none; }
-}
-@keyframes hero-dot {
-  from { opacity: 0; transform: scale(0); }
-  to { opacity: 1; transform: none; }
-}
-.hero-rise { animation: hero-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both; }
-.hero-line { display: block; animation: hero-line 1s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both; }
-.hero-dot { display: inline-block; transform-origin: 50% 80%; animation: hero-dot 0.6s cubic-bezier(0.16, 1, 0.3, 1) var(--d, 0s) both; }
